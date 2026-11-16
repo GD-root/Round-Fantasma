@@ -1,0 +1,127 @@
+{
+ "E": [
+  {
+   "nome": "Agachamento",
+   "dica": "Desce devagar, sobe firme",
+   "anim": "agach"
+  },
+  {
+   "nome": "Flexão",
+   "dica": "Pode apoiar os joelhos no começo",
+   "anim": "flexao"
+  },
+  {
+   "nome": "Prancha",
+   "dica": "Abdômen travado, respira",
+   "anim": "prancha"
+  },
+  {
+   "nome": "Polichinelo",
+   "dica": "Ritmo leve e constante",
+   "anim": "polichinelo"
+  }
+ ],
+ "A": [
+  {
+   "nome": "Agachamento",
+   "dica": "Desce até a coxa paralela, sobe firme",
+   "anim": "agach"
+  },
+  {
+   "nome": "Flexão",
+   "dica": "Corpo em prancha, peito perto do chão",
+   "anim": "flexao"
+  },
+  {
+   "nome": "Socos rápidos",
+   "dica": "1-2 sem parar, mãos voltando pra guarda",
+   "anim": "socos"
+  },
+  {
+   "nome": "Prancha",
+   "dica": "Abdômen travado, quadril alinhado",
+   "anim": "prancha"
+  },
+  {
+   "nome": "Escalador",
+   "dica": "Joelhos rápidos em direção ao peito",
+   "anim": "escalador"
+  }
+ ],
+ "B": [
+  {
+   "nome": "Burpee",
+   "dica": "Desce, peito no chão, salta",
+   "anim": "burpee"
+  },
+  {
+   "nome": "Flexão",
+   "dica": "Ritmo constante",
+   "anim": "flexao"
+  },
+  {
+   "nome": "Afundo alternado",
+   "dica": "Joelho de trás quase toca o chão",
+   "anim": "afundo"
+  },
+  {
+   "nome": "Prancha com toque no ombro",
+   "dica": "Sem balançar o quadril",
+   "anim": "toque"
+  }
+ ],
+ "C": [
+  {
+   "nome": "Socos rápidos",
+   "dica": "Máxima velocidade, guarda alta",
+   "anim": "socos"
+  },
+  {
+   "nome": "Agachamento com salto",
+   "dica": "Aterrissa macio",
+   "anim": "agachsalto"
+  },
+  {
+   "nome": "Flexão diamante",
+   "dica": "Mãos juntas embaixo do peito",
+   "anim": "diamante"
+  },
+  {
+   "nome": "Escalador",
+   "dica": "Rápido e contínuo",
+   "anim": "escalador"
+  },
+  {
+   "nome": "Abdominal canivete",
+   "dica": "Mãos encontram os pés",
+   "anim": "canivete"
+  },
+  {
+   "nome": "Burpee",
+   "dica": "Sem pausa no topo",
+   "anim": "burpee"
+  }
+ ],
+ "D": [
+  {
+   "nome": "Burpee com 1-2",
+   "dica": "Levanta e solta o 1-2",
+   "anim": "burpee"
+  },
+  {
+   "nome": "Flexão explosiva",
+   "dica": "Mãos saem do chão",
+   "anim": "explosiva"
+  },
+  {
+   "nome": "Agachamento e socos",
+   "dica": "Desce, sobe soltando 1-2-3",
+   "anim": "agach"
+  },
+  {
+   "nome": "Prancha",
+   "dica": "Segura firme até o sino",
+   "anim": "prancha"
+  }
+ ]
+}

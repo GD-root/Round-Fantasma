@@ -1,0 +1,352 @@
+[
+ {
+  "categoria": "Base e guarda",
+  "nota": "Tudo começa aqui",
+  "itens": [
+   {
+    "id": "base",
+    "num": "",
+    "nome": "Base",
+    "desc": "Pés na largura dos ombros, pé esquerdo à frente e o direito um pouco atrás e para fora. Joelhos levemente flexionados, calcanhar de trás um pouco levantado e peso dividido entre as pernas.",
+    "erro": "Pés na mesma linha (perde equilíbrio) ou pernas duras.",
+    "nivel": "basico"
+   },
+   {
+    "id": "guarda",
+    "num": "",
+    "nome": "Guarda",
+    "desc": "Mãos na altura das bochechas, cotovelos fechados protegendo as costelas, queixo baixo e olhos no adversário imaginário.",
+    "erro": "Baixar a mão que não está socando.",
+    "nivel": "basico"
+   }
+  ]
+ },
+ {
+  "categoria": "Golpes",
+  "nota": "1 a 6",
+  "itens": [
+   {
+    "id": "jab",
+    "num": "1",
+    "nome": "Jab",
+    "desc": "Mão da frente sai reta, girando o punho para baixo no final. Ombro sobe para proteger o queixo. Volta pelo mesmo caminho, rápido.",
+    "erro": "Puxar a mão para trás antes de socar (telegrafar).",
+    "nivel": "basico"
+   },
+   {
+    "id": "direto",
+    "num": "2",
+    "nome": "Direto (cross)",
+    "desc": "Mão de trás sai reta. Gira o pé de trás (calcanhar para fora), o quadril e o ombro juntos. A mão da frente fica na guarda.",
+    "erro": "Socar só com o braço, sem girar o corpo.",
+    "nivel": "basico"
+   },
+   {
+    "id": "hook3",
+    "num": "3",
+    "nome": "Cruzado de esquerda (hook)",
+    "desc": "Cotovelo na altura do punho, braço em gancho de uns 90°. Gira o pé da frente e o tronco para a direita. O golpe sai do giro, não do braço.",
+    "erro": "Abrir demais o braço e perder a força.",
+    "nivel": "basico"
+   },
+   {
+    "id": "hook4",
+    "num": "4",
+    "nome": "Cruzado de direita (hook)",
+    "desc": "Mesmo gancho com a mão de trás. Gira o pé de trás e o quadril. Use pouco: é um golpe de risco, geralmente depois de uma esquiva.",
+    "erro": "Ficar com o rosto exposto após o golpe.",
+    "nivel": "intermediario"
+   },
+   {
+    "id": "up5",
+    "num": "5",
+    "nome": "Upper de esquerda (uppercut)",
+    "desc": "Dobra levemente os joelhos, palma virada para você, e sobe o punho de baixo para cima com o giro do quadril. Curto, perto do corpo.",
+    "erro": "Baixar a mão antes (abre a guarda).",
+    "nivel": "intermediario"
+   },
+   {
+    "id": "up6",
+    "num": "6",
+    "nome": "Upper de direita (uppercut)",
+    "desc": "Mesmo movimento com a mão de trás, empurrando com a perna de trás.",
+    "erro": "Inclinar o tronco para trás ao subir.",
+    "nivel": "intermediario"
+   },
+   {
+    "id": "corpo",
+    "num": "",
+    "nome": "Golpe no corpo",
+    "desc": "Para socar o corpo, dobre os joelhos e desça o nível. A cabeça fica fora da linha central e a outra mão protege o rosto.",
+    "erro": "Curvar a cintura em vez de dobrar os joelhos.",
+    "nivel": "basico"
+   },
+   {
+    "id": "stepjab",
+    "num": "",
+    "nome": "Jab com avanço",
+    "desc": "O pé da frente avança junto com o jab, o de trás acompanha e você solta o segundo jab já na nova distância.",
+    "erro": "Avançar o pé de trás primeiro e perder a base.",
+    "nivel": "avancado"
+   }
+  ]
+ },
+ {
+  "categoria": "Defesa",
+  "nota": "Cada defesa termina em contra-ataque",
+  "itens": [
+   {
+    "id": "esquiva",
+    "num": "",
+    "nome": "Esquiva (slip)",
+    "desc": "Pequena rotação do tronco e dos joelhos para tirar a cabeça da linha do golpe, para fora (direita) ou para dentro (esquerda). Movimento curto, uns 10 cm.",
+    "erro": "Esquivar demais e perder a base.",
+    "nivel": "basico"
+   },
+   {
+    "id": "pendulo",
+    "num": "",
+    "nome": "Pêndulo (bob and weave)",
+    "desc": "Dobra os joelhos e passa a cabeça por baixo de um cruzado imaginário, em U, subindo do outro lado já em posição de socar.",
+    "erro": "Abaixar curvando as costas e olhando para o chão.",
+    "nivel": "intermediario"
+   },
+   {
+    "id": "pullback",
+    "num": "",
+    "nome": "Pull back",
+    "desc": "Leva o tronco para trás, só o suficiente para o golpe passar na frente, sem mexer os pés. Volta na hora com o direto (pull counter).",
+    "erro": "Inclinar demais e ficar sem base para devolver.",
+    "nivel": "intermediario"
+   },
+   {
+    "id": "bloqueio",
+    "num": "",
+    "nome": "Bloqueio (block)",
+    "desc": "Recebe o golpe na luva ou no antebraço, mantendo a mão colada ao rosto. Logo depois devolve.",
+    "erro": "Fechar os olhos ou virar o rosto.",
+    "nivel": "basico"
+   },
+   {
+    "id": "parry",
+    "num": "",
+    "nome": "Parry",
+    "desc": "Com a mão de trás, desvia o jab do adversário com um toque curto da palma, para baixo ou para o lado. Abre espaço para o direto.",
+    "erro": "Movimento largo que deixa o rosto aberto.",
+    "nivel": "intermediario"
+   },
+   {
+    "id": "shoulder",
+    "num": "",
+    "nome": "Shoulder roll",
+    "desc": "Mão da frente baixa protegendo as costelas e ombro da frente alto cobrindo o queixo. O golpe do adversário rola no ombro enquanto você gira o tronco; volta na hora com o direto.",
+    "erro": "Usar sem ter a esquiva e o bloqueio firmes: deixa o rosto aberto.",
+    "nivel": "avancado"
+   },
+   {
+    "id": "checkhook",
+    "num": "",
+    "nome": "Check hook",
+    "desc": "Quando o adversário avança, você solta o cruzado de esquerda girando no pé da frente e sai do caminho dele no mesmo movimento.",
+    "erro": "Soltar o cruzado sem girar: você fica parado na frente dele.",
+    "nivel": "avancado"
+   },
+   {
+    "id": "passoatras",
+    "num": "",
+    "nome": "Passo atrás",
+    "desc": "Passo para trás com o pé de trás primeiro, mantendo a base. Sai da distância e volta com contra-ataque.",
+    "erro": "Andar para trás cruzando os pés.",
+    "nivel": "basico"
+   },
+   {
+    "id": "crosscounter",
+    "num": "",
+    "nome": "Contra cruzado (cross counter)",
+    "desc": "Quando o jab do adversário vem, você desce um pouco para dentro e solta o direto por cima do braço dele, no mesmo tempo.",
+    "erro": "Esperar o jab terminar: o contra precisa sair junto com ele.",
+    "nivel": "avancado"
+   }
+  ]
+ },
+ {
+  "categoria": "Trabalho de pernas",
+  "nota": "Nunca parado na frente",
+  "itens": [
+   {
+    "id": "passofrente",
+    "num": "",
+    "nome": "Passo à frente e atrás",
+    "desc": "Para frente, o pé da frente vai primeiro e o de trás acompanha. Para trás, o inverso. A distância entre os pés não muda.",
+    "erro": "Arrastar os pés ou cruzar as pernas.",
+    "nivel": "basico"
+   },
+   {
+    "id": "lateral",
+    "num": "",
+    "nome": "Passo lateral",
+    "desc": "Para a esquerda, pé esquerdo primeiro. Para a direita, pé direito primeiro. Sempre na ponta dos pés.",
+    "erro": "Pular em vez de deslizar.",
+    "nivel": "basico"
+   },
+   {
+    "id": "pivo",
+    "num": "",
+    "nome": "Pivô (pivot)",
+    "desc": "Com o peso no pé da frente, gira o corpo uns 45° a 90° trazendo o pé de trás em arco. Muda o ângulo de ataque.",
+    "erro": "Girar com o peso no pé errado.",
+    "nivel": "intermediario"
+   },
+   {
+    "id": "circular",
+    "num": "",
+    "nome": "Circular",
+    "desc": "Anda em volta do adversário imaginário com passos curtos, mantendo a guarda e o jab ativo.",
+    "erro": "Circular em direção à mão forte do outro.",
+    "nivel": "intermediario"
+   },
+   {
+    "id": "angulo",
+    "num": "",
+    "nome": "Ângulo",
+    "desc": "Depois de uma combinação, sai para o lado em vez de recuar reto. Assim você ataca e o adversário não está mais na sua frente para devolver.",
+    "erro": "Ficar na mesma linha depois de socar.",
+    "nivel": "intermediario"
+   },
+   {
+    "id": "lstep",
+    "num": "",
+    "nome": "L-step",
+    "desc": "Recua o pé da frente para perto do de trás e gira o quadril, formando um L. O adversário erra o golpe e você contra-ataca do ângulo novo.",
+    "erro": "Recuar em linha reta em vez de girar.",
+    "nivel": "avancado"
+   },
+   {
+    "id": "finta",
+    "num": "",
+    "nome": "Finta",
+    "desc": "Ameaça um golpe (um ombro ou um jab que não sai) para provocar uma reação e abrir espaço para o golpe de verdade.",
+    "erro": "Fintar tanto que o ataque nunca sai.",
+    "nivel": "avancado"
+   },
+   {
+    "id": "troca",
+    "num": "",
+    "nome": "Troca de base",
+    "desc": "Inverte a perna da frente com um passo ou pulo curto, mantendo a guarda. Treina os dois lados.",
+    "erro": "Ficar desequilibrado na troca.",
+    "nivel": "intermediario"
+   }
+  ]
+ },
+ {
+  "categoria": "Condicionamento",
+  "nota": "Usados no fim de cada treino",
+  "itens": [
+   {
+    "id": "polichinelo",
+    "num": "",
+    "nome": "Polichinelo",
+    "desc": "Abre pernas e braços ao mesmo tempo e volta. Ritmo leve e constante para aquecer.",
+    "erro": "Bater os calcanhares no chão: fique na ponta dos pés.",
+    "nivel": "basico"
+   },
+   {
+    "id": "socos",
+    "num": "",
+    "nome": "Socos rápidos",
+    "desc": "1-2 sem parar em velocidade máxima, mãos voltando para a guarda a cada golpe. Os socos são curtos, sem força total.",
+    "erro": "Abrir a guarda e socar com o ombro travado.",
+    "nivel": "basico"
+   },
+   {
+    "id": "agach",
+    "num": "",
+    "nome": "Agachamento",
+    "desc": "Pés na largura dos ombros, desce como se fosse sentar, coxas paralelas ao chão, joelhos na direção dos pés.",
+    "erro": "Joelhos entrando para dentro.",
+    "nivel": "basico"
+   },
+   {
+    "id": "agachsalto",
+    "num": "",
+    "nome": "Agachamento com salto",
+    "desc": "Agacha e salta explosivo, aterrissando macio já descendo para o próximo.",
+    "erro": "Aterrissar com as pernas travadas.",
+    "nivel": "basico"
+   },
+   {
+    "id": "flexao",
+    "num": "",
+    "nome": "Flexão",
+    "desc": "Corpo reto da cabeça ao calcanhar, mãos abaixo dos ombros, peito quase no chão.",
+    "erro": "Quadril caído ou empinado.",
+    "nivel": "basico"
+   },
+   {
+    "id": "diamante",
+    "num": "",
+    "nome": "Flexão diamante",
+    "desc": "Mãos juntas formando um losango embaixo do peito. Trabalha mais o tríceps.",
+    "erro": "Cotovelos abrindo para os lados.",
+    "nivel": "basico"
+   },
+   {
+    "id": "explosiva",
+    "num": "",
+    "nome": "Flexão explosiva",
+    "desc": "Empurra o chão com força para as mãos saírem do chão. Aterrissa com cotovelos levemente dobrados.",
+    "erro": "Perder a prancha no impulso.",
+    "nivel": "basico"
+   },
+   {
+    "id": "burpee",
+    "num": "",
+    "nome": "Burpee",
+    "desc": "Agacha, mãos no chão, joga os pés para trás, peito no chão, volta e salta.",
+    "erro": "Costas arqueadas na prancha.",
+    "nivel": "basico"
+   },
+   {
+    "id": "prancha",
+    "num": "",
+    "nome": "Prancha",
+    "desc": "Apoio nos antebraços, corpo reto, abdômen e glúteo contraídos.",
+    "erro": "Prender a respiração.",
+    "nivel": "basico"
+   },
+   {
+    "id": "toque",
+    "num": "",
+    "nome": "Prancha com toque no ombro",
+    "desc": "Em posição de flexão, toca o ombro oposto alternando as mãos sem balançar o quadril.",
+    "erro": "Abrir muito os pés para compensar.",
+    "nivel": "basico"
+   },
+   {
+    "id": "escalador",
+    "num": "",
+    "nome": "Escalador",
+    "desc": "Em prancha alta, puxa os joelhos alternados em direção ao peito, rápido.",
+    "erro": "Quadril alto demais.",
+    "nivel": "basico"
+   },
+   {
+    "id": "afundo",
+    "num": "",
+    "nome": "Afundo alternado",
+    "desc": "Passo grande à frente, desce até o joelho de trás quase tocar o chão, volta e troca.",
+    "erro": "Joelho da frente passando muito da ponta do pé.",
+    "nivel": "basico"
+   },
+   {
+    "id": "canivete",
+    "num": "",
+    "nome": "Abdominal canivete",
+    "desc": "Deitado, sobe tronco e pernas ao mesmo tempo, mãos encontram os pés.",
+    "erro": "Puxar o pescoço.",
+    "nivel": "basico"
+   }
+  ]
+ }
+]

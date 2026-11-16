@@ -1,0 +1,42 @@
+[
+ {
+  "nome": "Respira e caminha",
+  "dica": "Baixa os batimentos",
+  "seg": 30
+ },
+ {
+  "nome": "Alonga ombros",
+  "dica": "Braço cruzado na frente do peito",
+  "seg": 30
+ },
+ {
+  "nome": "Alonga peitoral",
+  "dica": "Mão na parede, gira o tronco",
+  "seg": 30
+ },
+ {
+  "nome": "Alonga quadríceps",
+  "dica": "Calcanhar no glúteo",
+  "seg": 30
+ },
+ {
+  "nome": "Alonga posterior",
+  "dica": "Perna estendida, tronco à frente",
+  "seg": 30
+ },
+ {
+  "nome": "Alonga panturrilha",
+  "dica": "Pé atrás, calcanhar no chão",
+  "seg": 30
+ },
+ {
+  "nome": "Mobilidade de quadril",
+  "dica": "Círculos lentos",
+  "seg": 30
+ },
+ {
+  "nome": "Respiração final",
+  "dica": "Inspira 4 s, solta 6 s",
+  "seg": 30
+ }
+]

@@ -1,0 +1,532 @@
+[
+ {
+  "name": "Jab e distância",
+  "mus": "Ombros (deltoide anterior), tríceps, serrátil e panturrilhas, que sustentam a base em movimento.",
+  "desc": "O jab controla tudo: mede a distância, abre a guarda e prepara o direto.",
+  "basico": {
+   "rounds": [
+    "Guarda e base",
+    "Jab solto",
+    "Jab duplo",
+    "1-2 parado",
+    "1-2 em movimento",
+    "Livre: jab e direto"
+   ],
+   "calls": [
+    "1",
+    "1-1",
+    "1-2",
+    "1-1-2",
+    "Jab, passo atrás",
+    "1-2, passo atrás"
+   ]
+  },
+  "inter": {
+   "rounds": [
+    "Guarda, base e jab solto",
+    "Jab duplo e 1-2",
+    "Jab em movimento",
+    "1-2 e sai do centro",
+    "Jab de controle, direto forte",
+    "Livre: domina a distância"
+   ],
+   "calls": [
+    "1",
+    "1-1",
+    "1-2",
+    "1-1-2",
+    "1-2-1",
+    "Jab e sai pra esquerda",
+    "Jab, recua",
+    "1-2, passo atrás",
+    "Jab no corpo, jab na cabeça",
+    "1-1-2-1"
+   ]
+  },
+  "alt": {
+   "rounds": [
+    "Jab de dentro pra fora",
+    "Jab triplo e direto",
+    "Jab em ângulo",
+    "Finta de jab, direto",
+    "Jab no corpo e sobe",
+    "Livre: só o jab manda"
+   ],
+   "calls": [
+    "Finta, 1-2",
+    "1-1-2-3",
+    "1 corpo, 1-2",
+    "1-2, pivô, 1",
+    "1-1, passo lateral, 2",
+    "Jab, esquiva, 2-3"
+   ]
+  },
+  "pro": {
+   "rounds": [
+    "Jab com finta",
+    "Jab em pivô",
+    "Jab de contra",
+    "Jab duplo, corpo e cabeça",
+    "Jab, finta, cruzado",
+    "Livre: jab de campeão"
+   ],
+   "calls": [
+    "Finta, 1-2-3",
+    "1, pivô, 2-3",
+    "Jab no corpo, 3 cabeça",
+    "1-1-2, passo lateral",
+    "Finta de jab, 3",
+    "1-2, finta, 2"
+   ]
+  },
+  "tecnicas": [
+   "jab",
+   "direto",
+   "stepjab",
+   "finta"
+  ]
+ },
+ {
+  "name": "Defesa e contra",
+  "mus": "Quadríceps e glúteos (descer o nível), oblíquos e lombar (rotação da esquiva) e core.",
+  "desc": "Primeiro não apanha, depois devolve. Cada defesa termina em golpe.",
+  "basico": {
+   "rounds": [
+    "Bloqueio e guarda",
+    "Bloqueia e devolve",
+    "Esquiva simples",
+    "Esquiva e jab",
+    "Passo atrás e contra",
+    "Livre: defende e devolve"
+   ],
+   "calls": [
+    "Bloqueia, 1-2",
+    "Esquiva, 2",
+    "Esquiva, 1",
+    "Passo atrás, 1-2",
+    "Bloqueia, 2",
+    "Esquiva e volta à guarda"
+   ]
+  },
+  "inter": {
+   "rounds": [
+    "Esquivas e pêndulo",
+    "Bloqueia e devolve",
+    "Esquiva e contra",
+    "Pêndulo por baixo do cruzado",
+    "Recua e contra-ataca",
+    "Livre: defesa primeiro"
+   ],
+   "calls": [
+    "Esquiva, 2",
+    "Esquiva, 3",
+    "Pêndulo, 3-2",
+    "Bloqueia, 1-2",
+    "Esquiva dupla, 3",
+    "Pull back, 2",
+    "Recua, 1-2",
+    "Parry, 2-3",
+    "Desce, 6-3",
+    "Esquiva, 2-3-2"
+   ]
+  },
+  "alt": {
+   "rounds": [
+    "Esquiva e devolve três",
+    "Pêndulo duplo",
+    "Bloqueia o cruzado, devolve",
+    "Pull back e contra",
+    "Defesa contra a corda",
+    "Livre: contra-ataque"
+   ],
+   "calls": [
+    "Esquiva, esquiva, 3-2",
+    "Pêndulo, pêndulo, 3",
+    "Bloqueia, 3-2-3",
+    "Pull back, 2-3",
+    "Parry, 2-3-2",
+    "Esquiva, 6-3-2"
+   ]
+  },
+  "pro": {
+   "rounds": [
+    "Shoulder roll",
+    "Pull counter",
+    "Check hook",
+    "Esquiva e upper",
+    "Defesa encostado na corda",
+    "Livre: contra de campeão"
+   ],
+   "calls": [
+    "Shoulder roll, 2",
+    "Pull back, 2-3",
+    "Check hook",
+    "Esquiva, 6-3",
+    "Parry, 2, pivô",
+    "Pêndulo, 3-2-3"
+   ]
+  },
+  "tecnicas": [
+   "bloqueio",
+   "esquiva",
+   "pendulo",
+   "pullback",
+   "parry",
+   "shoulder",
+   "checkhook",
+   "crosscounter"
+  ]
+ },
+ {
+  "name": "Corpo e cabeça",
+  "mus": "Quadríceps e glúteos (troca de nível), oblíquos, peitoral e ombros.",
+  "desc": "Trocar o nível do ataque abre a guarda. Dobre os joelhos, não a cintura.",
+  "basico": {
+   "rounds": [
+    "Desce o nível",
+    "Jab no corpo",
+    "Direto no corpo",
+    "1-2 no corpo",
+    "Corpo e cabeça",
+    "Livre: dois níveis"
+   ],
+   "calls": [
+    "1-2 no corpo",
+    "Jab no corpo",
+    "2 no corpo",
+    "1, 2 no corpo",
+    "Desce e 1-2",
+    "1-2-3"
+   ]
+  },
+  "inter": {
+   "rounds": [
+    "Jab no corpo",
+    "1-2 alternando altura",
+    "Cruzado no corpo",
+    "Upper e cruzado",
+    "Desce e sobe",
+    "Livre: trabalha o corpo"
+   ],
+   "calls": [
+    "1-2 no corpo",
+    "Jab corpo, jab cabeça",
+    "3 corpo, 3 cabeça",
+    "1-2-3 corpo",
+    "2 corpo, 3 cabeça",
+    "6-3-2",
+    "1-2, 3 no corpo",
+    "5-6",
+    "3 corpo, 2",
+    "1-6-3"
+   ]
+  },
+  "alt": {
+   "rounds": [
+    "Três no corpo, um na cabeça",
+    "Upper no corpo",
+    "Cruzado duplo",
+    "Corpo, cabeça, sai",
+    "Desce e rasga o corpo",
+    "Livre: castiga o corpo"
+   ],
+   "calls": [
+    "3 corpo, 3 cabeça, 2",
+    "1-2, 3 corpo, 3",
+    "5 corpo, 3 cabeça",
+    "2 corpo, 3-2",
+    "1-2-3 corpo, 2",
+    "6 corpo, 3-2"
+   ]
+  },
+  "pro": {
+   "rounds": [
+    "Cruzado no fígado",
+    "Fígado e cabeça",
+    "Troca de nível em combinação",
+    "Corpo com pivô",
+    "Ataque de cinco golpes",
+    "Livre: castiga o corpo"
+   ],
+   "calls": [
+    "3 fígado, 3 cabeça",
+    "1-2, 3 corpo, 6",
+    "5 corpo, 3 cabeça, 2",
+    "2 corpo, 3, pivô",
+    "6-3 corpo, 3 cabeça",
+    "1-2-3-6-3"
+   ]
+  },
+  "tecnicas": [
+   "corpo",
+   "hook3",
+   "up5",
+   "up6"
+  ]
+ },
+ {
+  "name": "Pernas e ângulos",
+  "mus": "Panturrilhas, quadríceps, glúteos e adutores. Melhora o equilíbrio e a coordenação.",
+  "desc": "Nunca parado na frente. Entra, ataca e sai em ângulo.",
+  "basico": {
+   "rounds": [
+    "Passos sem socar",
+    "Frente e trás",
+    "Passo lateral",
+    "Entra e sai",
+    "Circula",
+    "Livre: pés vivos"
+   ],
+   "calls": [
+    "Passo à frente, 1",
+    "Passo lateral, 1-2",
+    "Passo atrás",
+    "Entra, 1-2, sai",
+    "Circula pra esquerda",
+    "Circula pra direita"
+   ]
+  },
+  "inter": {
+   "rounds": [
+    "Movimento sem socar",
+    "Entra, soca e sai",
+    "Pivô e ângulo",
+    "Circula e ataca",
+    "Passo lateral e combinação",
+    "Livre: nunca parado"
+   ],
+   "calls": [
+    "Pivô, 1-2",
+    "Sai pra direita, 2-3",
+    "Entra e sai, 1",
+    "Ângulo, 3-2",
+    "Circula pra esquerda",
+    "Passo lateral, 1-2-3",
+    "Recua, pivô, 2",
+    "Entra com 1-2, sai",
+    "Troca de base",
+    "Circula pra direita, 1"
+   ]
+  },
+  "alt": {
+   "rounds": [
+    "Corta o ringue",
+    "Entra em ângulo",
+    "Pivô duplo",
+    "Saída lateral e volta",
+    "Troca de base e ataca",
+    "Livre: dono do ringue"
+   ],
+   "calls": [
+    "Pivô, 3-2",
+    "Passo lateral, 1-2-3",
+    "Troca de base, 1-2",
+    "Entra, 1-2-3, sai em ângulo",
+    "Circula, finta, 2",
+    "Recua, pivô, 3-2"
+   ]
+  },
+  "pro": {
+   "rounds": [
+    "L-step",
+    "Corta o ringue",
+    "Pivô e contra",
+    "Ritmo e troca de base",
+    "Entra e sai em ângulo",
+    "Livre: domínio de ringue"
+   ],
+   "calls": [
+    "L-step, 2",
+    "Pivô, 3-2-3",
+    "Troca de base, 2-3",
+    "Corta, 1-2-3",
+    "Passo lateral, 3-2",
+    "Finta, ângulo, 2"
+   ]
+  },
+  "tecnicas": [
+   "passofrente",
+   "passoatras",
+   "lateral",
+   "pivo",
+   "angulo",
+   "circular",
+   "lstep",
+   "troca"
+  ]
+ },
+ {
+  "name": "Potência",
+  "mus": "Glúteos e quadril (início do giro), oblíquos, peitoral, dorsais e ombros.",
+  "desc": "Golpe sai do chão: gira o pé, o quadril e o ombro. Expira em cada soco.",
+  "basico": {
+   "rounds": [
+    "Rotação do quadril",
+    "Direto com giro",
+    "1-2 forte",
+    "Cruzado de esquerda",
+    "1-2-3",
+    "Livre: firme e solto"
+   ],
+   "calls": [
+    "1-2",
+    "1-2-3",
+    "2-3",
+    "1-2-3-2",
+    "3-2",
+    "1-1-2"
+   ]
+  },
+  "inter": {
+   "rounds": [
+    "1-2-3 com rotação",
+    "Cruzado e upper",
+    "Combinações de quatro",
+    "Troca de nível",
+    "Golpe forte no final",
+    "Livre: sequências longas"
+   ],
+   "calls": [
+    "1-2-3-2",
+    "1-6-3-2",
+    "3-2-3",
+    "5-2-3",
+    "1-2-5-2",
+    "2-3-6-3",
+    "1-2-3, 2 forte",
+    "3-6-3",
+    "1-2-3-4",
+    "6-3-2-3"
+   ]
+  },
+  "alt": {
+   "rounds": [
+    "Cinco golpes",
+    "Upper e cruzado de direita",
+    "Dois cruzados",
+    "Combinação com defesa",
+    "Finaliza com força",
+    "Livre: rajadas longas"
+   ],
+   "calls": [
+    "1-2-3-2-3",
+    "1-2-5-2-3",
+    "3-3-2",
+    "1-2-3, esquiva, 2",
+    "2-3-2-5-2",
+    "1-6-3-2-3"
+   ]
+  },
+  "pro": {
+   "rounds": [
+    "Sequências de seis",
+    "Dupla de cruzados",
+    "Upper e cruzado no corpo",
+    "Finaliza em quatro",
+    "Potência com defesa",
+    "Livre: tudo forte"
+   ],
+   "calls": [
+    "1-2-3-2-3-2",
+    "3-3-2-3",
+    "6-3 corpo, 3",
+    "1-2-3-4",
+    "2-3-2, esquiva, 2",
+    "5-2-3-2"
+   ]
+  },
+  "tecnicas": [
+   "direto",
+   "hook3",
+   "hook4",
+   "up5",
+   "up6"
+  ]
+ },
+ {
+  "name": "Condicionamento de luta",
+  "mus": "Corpo inteiro e resistência cardiorrespiratória.",
+  "desc": "Pressão e volume. Mantém a técnica mesmo cansado.",
+  "basico": {
+   "rounds": [
+    "Socos leves sem parar",
+    "1-2 e agachamento",
+    "Saltita na base",
+    "Rajadas curtas",
+    "Pernas vivas",
+    "Livre: até o sino"
+   ],
+   "calls": [
+    "Socos rápidos!",
+    "1-2 sem parar",
+    "Agacha e 1-2",
+    "Saltita na base",
+    "1-2-3 rápido",
+    "Rajada!"
+   ]
+  },
+  "inter": {
+   "rounds": [
+    "Socos sem parar",
+    "Combinação e agachamento",
+    "Pressão para frente",
+    "Rajadas de 10 segundos",
+    "Pernas vivas",
+    "Livre: até o sino"
+   ],
+   "calls": [
+    "Rajada! Socos rápidos",
+    "1-2 sem parar",
+    "Agacha e 1-2",
+    "Pressiona, 1-2-3",
+    "Esquiva e rajada",
+    "Burpee e 1-2",
+    "1-2-3-2 rápido",
+    "Upper rápido, 5-6",
+    "Corpo! 3-4-3-4",
+    "Pernas, saltita"
+   ]
+  },
+  "alt": {
+   "rounds": [
+    "Rajada de 20 segundos",
+    "Burpee e combinação",
+    "Pressão sem parar",
+    "Socos e agachamento",
+    "Corpo inteiro",
+    "Livre: até o sino"
+   ],
+   "calls": [
+    "Rajada 20 segundos!",
+    "Burpee e 1-2-3",
+    "Agacha e 3-2",
+    "1-2 rápido, pêndulo",
+    "Socos rápidos e esquiva",
+    "Corpo! 3-4-5-6"
+   ]
+  },
+  "pro": {
+   "rounds": [
+    "Rajadas de 30 segundos",
+    "Pressão com defesa",
+    "Burpee e quatro golpes",
+    "Volume no corpo",
+    "Ritmo de último round",
+    "Livre: até o sino"
+   ],
+   "calls": [
+    "Rajada 30 segundos!",
+    "Pressiona, 1-2-3-2",
+    "Burpee e 1-2-3-2",
+    "Corpo! 3-4-3-4-3",
+    "Esquiva, rajada",
+    "Socos rápidos, pêndulo"
+   ]
+  },
+  "tecnicas": [
+   "socos",
+   "burpee",
+   "agachsalto"
+  ]
+ }
+]
