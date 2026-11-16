@@ -87,6 +87,41 @@ const VU={h:[74,136],n:[82,150],ls:[84,154],rs:[84,154],le:[110,138],lh:[136,122
 const T={lfh:[112,98],lft:[130,94],rfh:[74,118],rft:[86,105],c:[96,106],d:[124,103]};
 const OPP=[176,100];
 
+
+// ---- Poses das técnicas acrescentadas na versão Shadowboxing ----
+const espelho=p=>{const q={};Object.keys(p).forEach(k=>{q[k]=[200-p[k][0],p[k][1]]});return swapLR(q)};
+// golpes
+const OHa=md(bend(S,4),{rs:[96,58],re:[97,42],rh:[112,30]});
+const OH=md(bend(X,6),{re:[134,52],rh:[166,74],h:[108,46],n:[103,62]});
+const JS=md(J,{rk:[66,160],ra:[53,193],rt:[65,198]});
+const BZ=md(mv(J,UK,10,0),{lk:[128,160],la:[138,196],lt:[152,198]});
+// defesa
+const COBf=bend(md(F,{lh:[106,24],rh:[94,24],le:[114,58],re:[86,58]}),4);
+const COBs=md(bend(S,4),{lh:[118,40],rh:[112,38],le:[114,74],re:[104,76]});
+const COT=md(bend(S,10),{le:[104,104],lh:[113,58],h:[103,50]});
+const CAT=md(S,{rh:[122,44],re:[106,70]});
+// pernas
+const P1=md(mv(S,[...UK,"p","lp","rp"],5,0),{lk:[124,160],la:[133,196],lt:[147,198]});
+// condicionamento
+const NG=md(N,{le:[110,80],lh:[116,56],re:[104,80],rh:[110,57]});
+const KL=md(NG,{lk:[126,112],la:[124,150],lt:[138,152]});
+const KR=md(NG,{rk:[122,113],ra:[120,151],rt:[134,153]});
+const NU=md(all(N,0,-7),{lt:[117,198],rt:[112,198]});
+const SPL=md(FP,{p:[92,170],lp:[92,170],rp:[90,170],re:[136,148],rh:[132,124]});
+const PT0={h:[40,186],n:[54,188],ls:[58,188],rs:[58,188],le:[76,192],lh:[94,196],re:[76,193],rh:[94,197],p:[104,190],lp:[104,190],rp:[104,190],lk:[134,160],la:[148,196],lt:[158,198],rk:[134,161],ra:[148,197],rt:[158,198]};
+const PT1=md(PT0,{p:[106,160],lp:[106,160],rp:[106,160],lk:[138,152],rk:[138,153]});
+const SEAT={h:[78,120],n:[84,136],ls:[86,140],rs:[86,140],le:[104,150],lh:[118,140],re:[104,151],rh:[118,141],p:[100,186],lp:[100,186],rp:[100,186],lk:[128,160],la:[150,176],lt:[160,170],rk:[128,161],ra:[150,177],rt:[160,171]};
+const GR1=md(SEAT,{h:[76,121],le:[108,154],lh:[128,150],re:[98,138],rh:[110,128]});
+const GR2=md(SEAT,{h:[80,121],re:[108,155],rh:[128,151],le:[98,139],lh:[110,129]});
+const BK1={h:[48,170],n:[60,180],ls:[62,182],rs:[62,182],le:[54,164],lh:[44,160],re:[54,165],rh:[44,161],p:[104,190],lp:[104,190],rp:[104,190],lk:[98,154],la:[120,158],lt:[126,150],rk:[140,178],ra:[172,172],rt:[178,162]};
+const BK2=md(BK1,{lk:[140,177],la:[172,171],lt:[178,161],rk:[98,155],ra:[120,159],rt:[126,151]});
+const SU1=md(LY,{h:[38,178],lh:[16,174],rh:[16,175],le:[34,180],re:[34,181],lk:[134,188],rk:[134,189],la:[166,182],ra:[166,183],lt:[172,174],rt:[172,175]});
+const CD=md(Q,{le:[126,96],lh:[132,76],re:[120,98],rh:[126,77]});
+const AL={h:[118,46],n:[116,64],ls:[130,72],rs:[102,72],le:[132,98],lh:[124,74],re:[100,98],rh:[110,72],p:[114,130],lp:[124,130],rp:[104,130],lk:[148,158],la:[150,196],lt:[160,198],rk:[78,162],ra:[46,194],rt:[38,198]};
+const U1=md(F,{le:[118,34],lh:[120,8]});
+const U2=md(F,{re:[82,34],rh:[80,8]});
+const HT=md(HP,{ls:[140,146],rs:[140,146],re:[146,122],rh:[150,98],h:[158,136]});
+
 const idle=(p,d=3,ms=480)=>[[p,0,0],[bend(p,d),ms,0]];
 const ANIM={
  base:{view:"body",frames:idle(S)},
@@ -130,7 +165,29 @@ const ANIM={
  toque:{view:"body",frames:[[HP,0,200],[md(HP,{le:[152,164],lh:[140,150]}),280,200],[HP,280,200],[md(HP,{re:[150,165],rh:[138,151]}),280,200],[HP,280,200]]},
  escalador:{view:"body",frames:[[HP,0,0],[md(HP,{lk:[118,176],la:[100,188],lt:[94,198]}),220,40],[HP,200,0],[md(HP,{rk:[118,177],ra:[100,189],rt:[94,198]}),220,40],[HP,200,0]]},
  canivete:{view:"body",frames:[[LY,0,300],[VU,520,200],[LY,560,300]]},
- burpee:{view:"body",frames:[[N,0,200],[QB,380,60],[HP,260,60],[LP,320,60],[HP,320,60],[QB,300,60],[all(N,0,-15),300,80],[N,260,300]]}
+ burpee:{view:"body",frames:[[N,0,200],[QB,380,60],[HP,260,60],[LP,320,60],[HP,320,60],[QB,300,60],[all(N,0,-15),300,80],[N,260,300]]},
+ // acrescentadas na versão Shadowboxing
+ overhand:{view:"body",frames:[[S,0,500],[OHa,200,40],[OH,190,160],[S,260,500]],trail:"M112 32 Q148 24 166 74"},
+ jabsaindo:{view:"body",frames:[[S,0,500],[JS,190,140],[all(S,-12,0),220,300],[S,420,500]],trail:"M124 62 L168 62"},
+ blitz:{view:"body",frames:[[S,0,400],[BZ,150,40],[all(X,16,0),180,160],[S,420,500]],trail:"M134 62 L184 62"},
+ cobertura:{view:"body",front:true,frames:[[F,0,500],[COBf,170,700],[F,240,500]]},
+ cotovelo:{view:"body",frames:[[S,0,500],[COT,180,500],[S,220,500]]},
+ catch:{view:"body",frames:[[S,0,500],[CAT,130,200],[S,150,100],[X,190,160],[S,240,500]]},
+ pivoreverso:{view:"top",frames:[[T,0,500],[rot(T,T.rfh,40),300,0],[rot(T,T.rfh,80),300,600],[T,400,400]]},
+ saltitar:{view:"body",frames:[[S,0,0],[all(S,0,-5),150,0],[S,150,0]]},
+ passoduplo:{view:"body",frames:[[S,0,300],[P1,150,0],[all(S,10,0),150,40],[md(mv(all(S,10,0),[...UK,"p","lp","rp"],5,0),{lk:[134,160],la:[143,196],lt:[157,198]}),150,0],[all(S,20,0),150,500],[S,500,300]]},
+ pranchalateral:{view:"body",frames:[[SPL,0,0],[md(SPL,{p:[92,176],lp:[92,176],rp:[90,176]}),1400,200]]},
+ ponte:{view:"body",frames:[[PT0,0,300],[PT1,600,500],[PT0,600,300]]},
+ panturrilha:{view:"body",frames:[[N,0,200],[NU,500,400],[N,500,300]]},
+ joelhoalto:{view:"body",frames:[[NG,0,0],[KL,180,0],[NG,160,0],[KR,180,0],[NG,160,0]]},
+ girorusso:{view:"body",frames:[[SEAT,0,0],[GR1,260,60],[SEAT,200,0],[GR2,260,60],[SEAT,200,0]]},
+ bicicleta:{view:"body",frames:[[BK1,0,80],[BK2,420,80],[BK1,420,80]]},
+ superman:{view:"body",frames:[[LY,0,300],[SU1,500,600],[LY,500,300]]},
+ cadeira:{view:"body",frames:[[CD,0,0],[md(CD,{h:[118,73]}),1400,200]]},
+ afundolateral:{view:"body",front:true,frames:[[NF,0,300],[AL,500,300],[NF,500,300],[espelho(AL),500,300],[NF,500,300]]},
+ socoscima:{view:"body",front:true,frames:[[F,0,0],[U1,160,40],[F,140,0],[U2,160,40],[F,140,0]]},
+ flexaot:{view:"body",frames:[[HP,0,200],[LP,500,100],[HP,400,0],[HT,400,300],[HP,400,200]]},
+ sprawl:{view:"body",frames:[[S,0,200],[QB,260,0],[LP,240,140],[QB,260,0],[S,260,300]]}
 };
 // Combinações: transforma "1-2, esquiva, 3" em uma sequência de poses
 function comboAnim(call){
@@ -138,7 +195,7 @@ function comboAnim(call){
   const push=(p,ms=170,h=40)=>{fr.push([p,ms,h])};
   if(/burpee/.test(L)){ANIM.burpee.frames.slice(1).forEach(f=>fr.push([f[0],f[1]*.8,f[2]]));fr.push([S,260,200])}
   else if(/rajada|socos r/.test(L)&&!/\d/.test(L)){for(let i=0;i<3;i++){push(J,100,10);push(S,90,0);push(X,100,10);push(S,90,0)}}
-  L.split(",").forEach(seg=>{seg=seg.trim();const body=/corpo|fígado/.test(seg);
+  L.split(",").forEach(seg=>{seg=seg.trim();const body=/corpo|fígado/.test(seg);const antes=fr.length;
     if(/esquiva/.test(seg)){const n=(seg.match(/esquiva/g)||[]).length;for(let i=0;i<n;i++){push(SLo,180,80);push(S,160,0)}}
     if(/pêndulo/.test(seg)){const n=(seg.match(/pêndulo/g)||[]).length;for(let i=0;i<n;i++){push(PDs,260,0);push(S,240,0)}}
     if(/pull back|recua/.test(seg)){push(PB,200,120);push(S,160,0)}
@@ -147,11 +204,25 @@ function comboAnim(call){
     if(/shoulder roll/.test(seg)){push(SR,220,220);push(S,180,0)}
     if(/check hook/.test(seg)){push(H3,150,0);push(CH,240,200);push(S,260,0)}
     if(/finta/.test(seg)){push(FT,120,60);push(S,110,0)}
+    if(/cobertura/.test(seg)){push(COBs,170,240);push(S,160,0)}
+    if(/cotovelo/.test(seg)){push(COT,170,160);push(S,150,0)}
+    if(/pega o jab/.test(seg)){push(CAT,130,80);push(S,120,0)}
+    if(/jab saindo/.test(seg)){const n=(seg.match(/jab saindo/g)||[]).length;for(let i=0;i<n;i++){push(JS,190,80);push(S,170,0)}}
+    if(/blitz/.test(seg)){push(BZ,150,30);push(all(X,16,0),180,80);push(S,240,0)}
+    if(/overhand/.test(seg)){push(OHa,180,20);push(OH,190,80);push(S,200,0)}
+    if(/joelho alto/.test(seg)){for(let i=0;i<2;i++){push(KL,160,0);push(NG,140,0);push(KR,160,0);push(NG,140,0)}push(S,200,0)}
+    if(/sprawl/.test(seg)){push(QB,240,0);push(LP,220,100);push(QB,240,0);push(S,240,0)}
+    if(/passo duplo/.test(seg)){push(all(S,8,0),140,0);push(S,140,0);push(all(S,8,0),140,60);push(S,200,0)}
     if(/agacha/.test(seg)){push(bend(S,26),260,80);push(S,220,0)}
     if(/saltita|pernas/.test(seg)){for(let i=0;i<3;i++){push(all(S,0,-7),140,0);push(S,140,0)}}
     if(/pivô|l-step|ângulo|circula|passo lateral|sai pra|troca de base/.test(seg)&&!/\d/.test(seg)){push(all(S,10,0),220,100);push(S,240,0)}
     const m=seg.match(/\d(?:-\d)*/g);if(m)m.forEach(g=>g.split("-").forEach((d,i,arr)=>{const st=(body&&i===0)?BODY[d]:STRIKE[d];if(!st)return;push(st,d==="1"?150:180,50);if(i<arr.length-1)push(md(S,{h:st.h}),120,0)}));
     if(m)push(S,170,0);
+    /* trecho que nada acima entendeu: "jab" por extenso e "passo atrás" */
+    if(fr.length===antes){
+      if(/\bjab\b/.test(seg)){push(body?BODY[1]:J,150,50);push(S,170,0)}
+      if(/passo atrás/.test(seg)){push(md(mv(S,[...UK,"p","lp","rp"],-6,0),{rk:[66,160],ra:[53,193],rt:[65,198]}),200,0);push(all(S,-12,0),200,120);push(S,260,0)}
+    }
   });
   fr.push([S,200,300]);
   return {view:"body",frames:fr};
@@ -232,4 +303,4 @@ class Fig{
 let raf=0;function kick(){if(!raf)raf=requestAnimationFrame(loopFigs)}
 function loopFigs(now){raf=0;FIGS.forEach(f=>{if(f.svg.isConnected)f.tick(now);else FIGS.delete(f)});if(FIGS.size)kick()}
 
-export { FIGCFG, Fig, ANIM, comboAnim, S, md, mv, all, bend, rot, swapLR, UK };
+export { FIGCFG, Fig, ANIM, comboAnim, S, md, mv, all, bend, rot, swapLR, UK, BONES };

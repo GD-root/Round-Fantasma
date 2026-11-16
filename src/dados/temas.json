@@ -18,7 +18,9 @@
     "1-2",
     "1-1-2",
     "Jab, passo atrás",
-    "1-2, passo atrás"
+    "1-2, passo atrás",
+    "Saltita, 1-2",
+    "Jab, saltita, 1"
    ]
   },
   "inter": {
@@ -40,7 +42,9 @@
     "Jab, recua",
     "1-2, passo atrás",
     "Jab no corpo, jab na cabeça",
-    "1-1-2-1"
+    "1-1-2-1",
+    "Jab saindo, 2",
+    "Jab saindo, jab saindo"
    ]
   },
   "alt": {
@@ -58,7 +62,9 @@
     "1 corpo, 1-2",
     "1-2, pivô, 1",
     "1-1, passo lateral, 2",
-    "Jab, esquiva, 2-3"
+    "Jab, esquiva, 2-3",
+    "Passo duplo, 1-2",
+    "Jab saindo, 2-3"
    ]
   },
   "pro": {
@@ -76,14 +82,19 @@
     "Jab no corpo, 3 cabeça",
     "1-1-2, passo lateral",
     "Finta de jab, 3",
-    "1-2, finta, 2"
+    "1-2, finta, 2",
+    "Blitz, 1-2",
+    "Blitz, 1-2-3, sai em ângulo"
    ]
   },
   "tecnicas": [
    "jab",
    "direto",
    "stepjab",
-   "finta"
+   "finta",
+   "jabsaindo",
+   "blitz",
+   "saltitar"
   ]
  },
  {
@@ -105,7 +116,11 @@
     "Esquiva, 1",
     "Passo atrás, 1-2",
     "Bloqueia, 2",
-    "Esquiva e volta à guarda"
+    "Esquiva e volta à guarda",
+    "Cobertura, 1-2",
+    "Cotovelo, 2",
+    "Pega o jab, 2",
+    "Cobertura, esquiva, 2"
    ]
   },
   "inter": {
@@ -127,7 +142,10 @@
     "Recua, 1-2",
     "Parry, 2-3",
     "Desce, 6-3",
-    "Esquiva, 2-3-2"
+    "Esquiva, 2-3-2",
+    "Pega o jab, 2-3",
+    "Cobertura, 3-2",
+    "Cotovelo, 3 corpo"
    ]
   },
   "alt": {
@@ -145,7 +163,9 @@
     "Bloqueia, 3-2-3",
     "Pull back, 2-3",
     "Parry, 2-3-2",
-    "Esquiva, 6-3-2"
+    "Esquiva, 6-3-2",
+    "Pega o jab, 2, overhand",
+    "Cobertura, pêndulo, 3-2"
    ]
   },
   "pro": {
@@ -163,7 +183,9 @@
     "Check hook",
     "Esquiva, 6-3",
     "Parry, 2, pivô",
-    "Pêndulo, 3-2-3"
+    "Pêndulo, 3-2-3",
+    "Pivô reverso, 2",
+    "Shoulder roll, pega o jab, 2"
    ]
   },
   "tecnicas": [
@@ -174,7 +196,11 @@
    "parry",
    "shoulder",
    "checkhook",
-   "crosscounter"
+   "crosscounter",
+   "cobertura",
+   "cotovelo",
+   "catch",
+   "pivoreverso"
   ]
  },
  {
@@ -196,7 +222,9 @@
     "2 no corpo",
     "1, 2 no corpo",
     "Desce e 1-2",
-    "1-2-3"
+    "1-2-3",
+    "Cotovelo, 1-2",
+    "2 no corpo, cotovelo"
    ]
   },
   "inter": {
@@ -218,7 +246,9 @@
     "1-2, 3 no corpo",
     "5-6",
     "3 corpo, 2",
-    "1-6-3"
+    "1-6-3",
+    "1 corpo, overhand",
+    "Cotovelo, 3 corpo, 3"
    ]
   },
   "alt": {
@@ -236,7 +266,9 @@
     "5 corpo, 3 cabeça",
     "2 corpo, 3-2",
     "1-2-3 corpo, 2",
-    "6 corpo, 3-2"
+    "6 corpo, 3-2",
+    "5 corpo, overhand",
+    "3 corpo, cotovelo, 2"
    ]
   },
   "pro": {
@@ -254,14 +286,18 @@
     "5 corpo, 3 cabeça, 2",
     "2 corpo, 3, pivô",
     "6-3 corpo, 3 cabeça",
-    "1-2-3-6-3"
+    "1-2-3-6-3",
+    "2 corpo, overhand, 3",
+    "1-2, 3 corpo, overhand"
    ]
   },
   "tecnicas": [
    "corpo",
    "hook3",
    "up5",
-   "up6"
+   "up6",
+   "cotovelo",
+   "overhand"
   ]
  },
  {
@@ -283,7 +319,9 @@
     "Passo atrás",
     "Entra, 1-2, sai",
     "Circula pra esquerda",
-    "Circula pra direita"
+    "Circula pra direita",
+    "Saltita na base",
+    "Saltita, passo lateral"
    ]
   },
   "inter": {
@@ -305,7 +343,9 @@
     "Recua, pivô, 2",
     "Entra com 1-2, sai",
     "Troca de base",
-    "Circula pra direita, 1"
+    "Circula pra direita, 1",
+    "Passo duplo, 1-2",
+    "Passo duplo atrás, 2"
    ]
   },
   "alt": {
@@ -323,7 +363,9 @@
     "Troca de base, 1-2",
     "Entra, 1-2-3, sai em ângulo",
     "Circula, finta, 2",
-    "Recua, pivô, 3-2"
+    "Recua, pivô, 3-2",
+    "Passo duplo, 1-2-3, sai",
+    "Pivô reverso"
    ]
   },
   "pro": {
@@ -341,7 +383,9 @@
     "Troca de base, 2-3",
     "Corta, 1-2-3",
     "Passo lateral, 3-2",
-    "Finta, ângulo, 2"
+    "Finta, ângulo, 2",
+    "Pivô reverso, 3-2",
+    "Blitz, pivô, 2"
    ]
   },
   "tecnicas": [
@@ -352,7 +396,10 @@
    "angulo",
    "circular",
    "lstep",
-   "troca"
+   "troca",
+   "saltitar",
+   "passoduplo",
+   "pivoreverso"
   ]
  },
  {
@@ -374,7 +421,9 @@
     "2-3",
     "1-2-3-2",
     "3-2",
-    "1-1-2"
+    "1-1-2",
+    "1-2, 1-2",
+    "2-3-2"
    ]
   },
   "inter": {
@@ -396,7 +445,10 @@
     "1-2-3, 2 forte",
     "3-6-3",
     "1-2-3-4",
-    "6-3-2-3"
+    "6-3-2-3",
+    "1, overhand",
+    "2-3, overhand",
+    "Overhand, 3-2"
    ]
   },
   "alt": {
@@ -414,7 +466,9 @@
     "3-3-2",
     "1-2-3, esquiva, 2",
     "2-3-2-5-2",
-    "1-6-3-2-3"
+    "1-6-3-2-3",
+    "1-2-3, overhand",
+    "Overhand, 3, overhand"
    ]
   },
   "pro": {
@@ -432,7 +486,9 @@
     "6-3 corpo, 3",
     "1-2-3-4",
     "2-3-2, esquiva, 2",
-    "5-2-3-2"
+    "5-2-3-2",
+    "Blitz, 2-3-2",
+    "1-2, overhand, 3-2"
    ]
   },
   "tecnicas": [
@@ -440,7 +496,9 @@
    "hook3",
    "hook4",
    "up5",
-   "up6"
+   "up6",
+   "overhand",
+   "blitz"
   ]
  },
  {
@@ -462,7 +520,9 @@
     "Agacha e 1-2",
     "Saltita na base",
     "1-2-3 rápido",
-    "Rajada!"
+    "Rajada!",
+    "Joelho alto, saltita",
+    "Socos rápidos e cobertura"
    ]
   },
   "inter": {
@@ -484,7 +544,9 @@
     "1-2-3-2 rápido",
     "Upper rápido, 5-6",
     "Corpo! 3-4-3-4",
-    "Pernas, saltita"
+    "Pernas, saltita",
+    "Sprawl e 1-2",
+    "Joelho alto e rajada"
    ]
   },
   "alt": {
@@ -502,7 +564,9 @@
     "Agacha e 3-2",
     "1-2 rápido, pêndulo",
     "Socos rápidos e esquiva",
-    "Corpo! 3-4-5-6"
+    "Corpo! 3-4-5-6",
+    "Sprawl, 1-2-3",
+    "Rajada, cobertura, rajada"
    ]
   },
   "pro": {
@@ -520,13 +584,17 @@
     "Burpee e 1-2-3-2",
     "Corpo! 3-4-3-4-3",
     "Esquiva, rajada",
-    "Socos rápidos, pêndulo"
+    "Socos rápidos, pêndulo",
+    "Sprawl, blitz, 1-2",
+    "Joelho alto, rajada 20 segundos!"
    ]
   },
   "tecnicas": [
    "socos",
    "burpee",
-   "agachsalto"
+   "agachsalto",
+   "sprawl",
+   "joelhoalto"
   ]
  }
 ]

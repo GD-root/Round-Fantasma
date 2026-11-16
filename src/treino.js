@@ -13,14 +13,17 @@ export const LKEYS = ["basico", "intermediario", "avancado"];
 export const FOCI = temas;
 export const TIPS = dicas;
 
-/* Formato antigo, usado pelo código de montagem: [nome, dica] e [nome, dica, segundos] */
-export const COND = Object.fromEntries(Object.entries(condicionamento).map(([k, v]) => [k, v.map((x) => [x.nome, x.dica])]));
+/* Conjuntos de condicionamento: [nome, dica] de cada exercício, e o nome e os músculos do conjunto */
+export const COND = Object.fromEntries(Object.entries(condicionamento).map(([k, v]) => [k, v.exercicios.map((x) => [x.nome, x.dica])]));
+export const COND_INFO = Object.fromEntries(Object.entries(condicionamento).map(([k, v]) => [k, { nome: v.nome, musculos: v.musculos }]));
+/* Além do conjunto da semana, cada nível alterna estes durante a semana, para variar os músculos trabalhados */
+export const COND_EXTRA = { basico: ["E2", "E3"], intermediario: ["F", "G", "H"], avancado: ["F", "G", "H", "I"] };
 export const WARM = aquecimento.map((x) => [x.nome, x.dica, x.seg]);
 export const COOL = voltaACalma.map((x) => [x.nome, x.dica, x.seg]);
 
 /* Animação de cada exercício, pelo nome que aparece no treino */
 export const COND_AK = {};
-Object.values(condicionamento).forEach((v) => v.forEach((x) => { if (x.anim) COND_AK[x.nome] = x.anim; }));
+Object.values(condicionamento).forEach((v) => v.exercicios.forEach((x) => { if (x.anim) COND_AK[x.nome] = x.anim; }));
 export const WARM_AK = Object.fromEntries(aquecimento.filter((x) => x.anim).map((x) => [x.nome, x.anim]));
 
 /* Guia de técnicas */
@@ -60,8 +63,10 @@ export function buildDay(lv,n){
     steps.push({k:"round",tag:`Round ${r+1} de ${R}`,title:t,sub:finish?`Últimos ${finish} s em ritmo máximo`:(I.phase===0&&lv==="basico"?"Devagar e certo. Técnica antes de velocidade":"Técnica limpa, guarda sempre alta"),dur:W.work,calls:P.calls,every,finish});
     if(r<titles.length-1)steps.push({k:"rest",tag:"Descanso",title:"Respira e solta os braços",sub:"",dur:W.rest});
   });
-  const sets=["A","B","C","D"];const set=c>=2&&lv!=="basico"?sets[(sets.indexOf(W.cond.set)+c-1)%4]:W.cond.set;const CL=COND[set];
+  const sets=["A","B","C","D"];const base=c>=2&&lv!=="basico"?sets[(sets.indexOf(W.cond.set)+c-1)%4]:W.cond.set;
+  /* o conjunto do dia gira entre o da semana e os extras do nível: cada dia trabalha um grupo muscular */
+  const pool=[base,...COND_EXTRA[lv]];const set=pool[(I.di+c-1)%pool.length];const CL=COND[set];
   for(let j=0;j<W.cond.n;j++){const cx=CL[j%CL.length];steps.push({k:"cond",tag:`Condicionamento ${j+1}/${W.cond.n}`,title:cx[0],sub:cx[1],dur:W.cond.work});steps.push({k:"rest",tag:"Pausa",title:"Recupera",sub:"",dur:W.cond.rest})}
   steps.push(...coolSteps(W.cool));
-  return {...I,lv,rec:false,week:W,name:F.name,desc:F.desc,mus:F.mus,steps,every,adv:c>=2};
+  return {...I,lv,rec:false,week:W,name:F.name,desc:F.desc,mus:F.mus,steps,every,adv:c>=2,cond:W.cond.n?{set,...COND_INFO[set]}:null};
 }

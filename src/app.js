@@ -64,7 +64,7 @@ function dayDetail(d){
   const calls=d.rec?[]:[...new Set(d.steps.find(s=>s.k==="round").calls)];
   return `<div class="card"><div class="sec-h"><h3>Técnicas do treino</h3><span class="eyebrow">toque para ver o movimento</span></div>${techChips(techForDay(d))}</div>
   <div class="card"><div class="sec-h"><h3>O treino</h3><span class="eyebrow">${fmtMin(total(d))}</span></div>${timeline(d)}</div>
-  ${calls.length?`<div class="card"><div class="sec-h"><h3>Combinações do dia</h3><span class="eyebrow">chamadas a cada ${d.every} s</span></div><div class="cloud">${calls.map(c=>`<span>${esc(sw(c))}</span>`).join("")}</div>${d.mus?`<div class="mus">${ICO.muscle}<span><b>Músculos mais trabalhados.</b> ${esc(d.mus)}</span></div>`:""}</div>`:""}`;
+  ${calls.length?`<div class="card"><div class="sec-h"><h3>Combinações do dia</h3><span class="eyebrow">chamadas a cada ${d.every} s</span></div><div class="cloud">${calls.map(c=>`<span>${esc(sw(c))}</span>`).join("")}</div>${d.mus?`<div class="mus">${ICO.muscle}<span><b>Músculos mais trabalhados.</b> ${esc(d.mus)}</span></div>`:""}${d.cond?`<div class="mus">${ICO.muscle}<span><b>Condicionamento de hoje: ${esc(d.cond.nome)}.</b> ${esc(d.cond.musculos)}</span></div>`:""}</div>`:""}`;
 }
 
 // ---------- HOJE ----------
@@ -138,18 +138,19 @@ function renderPlano(){
 
 // ---------- TÉCNICAS ----------
 function renderTecnicas(){
-  const host=$("tab-tecnicas");const cats=["Todas",...GUIDE.map(c=>c.cat),"Avançado"];
-  const list=GUIDE.flatMap(c=>c.items.map(it=>TECH[it.id]).filter(Boolean)).filter(t=>techFilter==="Todas"||(techFilter==="Avançado"?t.adv:t.cat===techFilter));
+  const host=$("tab-tecnicas");const cats=["Todas",...GUIDE.map(c=>c.cat),"Básico","Intermediário","Avançado"];
+  const NV={"Básico":"basico","Intermediário":"intermediario","Avançado":"avancado"};
+  const list=GUIDE.flatMap(c=>c.items.map(it=>TECH[it.id]).filter(Boolean)).filter(t=>techFilter==="Todas"||(NV[techFilter]?t.nivel===NV[techFilter]:t.cat===techFilter));
   host.innerHTML=`<div class="sec-h"><h2>Técnicas</h2><button type="button" class="linkbtn" id="goStyle">Trocar estilo do boneco</button></div>
   <div class="filters" role="tablist">${cats.map(c=>`<button type="button" class="${c===techFilter?"on":""}" data-f="${esc(c)}">${esc(c)}</button>`).join("")}</div>
-  <div class="tgrid">${list.map(t=>`<div class="tcard"><span data-static="${t.key}"></span><div style="min-width:0"><h4>${t.num?`<b>${t.num}</b>`:""}${esc(sw(t.name))}${t.adv?'<span class="tag">Avançado</span>':""}</h4><p>${esc(sw(t.desc))}</p><button type="button" class="vbtn" data-tech="${t.key}">${ICO.eye} Ver movimento</button></div></div>`).join("")}</div>
+  <div class="tgrid">${list.map(t=>`<div class="tcard"><span data-static="${t.key}"></span><div style="min-width:0"><h4>${t.num?`<b>${t.num}</b>`:""}${esc(sw(t.name))}${t.adv?'<span class="tag">Avançado</span>':t.nivel==="intermediario"?'<span class="tag inter">Intermediário</span>':""}</h4><p>${esc(sw(t.desc))}</p><button type="button" class="vbtn" data-tech="${t.key}">${ICO.eye} Ver movimento</button></div></div>`).join("")}</div>
   <p class="note">No desenho, o vermelho é o lado da frente. Você está no modo ${store.hand==="C"?"canhoto (C): pé e mão direitos à frente":"destro (D): pé e mão esquerdos à frente"}. Para trocar, toque na luva CONF no topo.</p>`;
   host.querySelectorAll("[data-f]").forEach(b=>b.onclick=()=>{techFilter=b.dataset.f;renderTecnicas()});
   $("goStyle").onclick=()=>{openConfig();setTimeout(()=>{const e=document.querySelector("#cfg .styles");if(e)e.scrollIntoView({behavior:"smooth",block:"center"})},80)};
   mountStatics(host);wireTech(host);
 }
 function openTech(k){
-  const t=TECH[k];if(!t)return;$("mCat").textContent=t.cat+(t.adv?" · Avançado":"");$("mTitle").textContent=(t.num?t.num+" · ":"")+sw(t.name);$("mDesc").textContent=sw(t.desc);$("mErr").innerHTML="<b>Erro comum:</b> "+esc(sw(t.err));$("mLegL").textContent="lado da frente (mão "+leadHand()+")";$("mLegR").textContent="lado de trás";
+  const t=TECH[k];if(!t)return;$("mCat").textContent=t.cat+(t.adv?" · Avançado":t.nivel==="intermediario"?" · Intermediário":"");$("mTitle").textContent=(t.num?t.num+" · ":"")+sw(t.name);$("mDesc").textContent=sw(t.desc);$("mErr").innerHTML="<b>Erro comum:</b> "+esc(sw(t.err));$("mMus").innerHTML=t.mus?"<b>Músculos:</b> "+esc(sw(t.mus)):"";$("mLegL").textContent="lado da frente (mão "+leadHand()+")";$("mLegR").textContent="lado de trás";
   const st=$("mStage");st.innerHTML="";const f=new Fig(st,{ghost:true,label:t.name});f.play(ANIM[k],{force:true});
   $("mPause").textContent="Pausar";$("mSlow").textContent="Câmera lenta";
   $("mPause").onclick=()=>{f.setPaused(!f.paused);$("mPause").textContent=f.paused?"Continuar":"Pausar"};
@@ -182,7 +183,7 @@ function renderConfig(){
   <div class="card"><h3>App e som</h3>
     <div class="set"><span>Chamar combinações por voz</span><button type="button" class="switch" role="switch" aria-checked="${store.voice}" id="sVoice" aria-label="Voz"></button></div>
     <div class="set"><span>Sinal sonoro (sino e bipes)</span><button type="button" class="switch" role="switch" aria-checked="${store.beep}" id="sBeep" aria-label="Som"></button></div>
-    <p class="note" style="margin:0">Instale o Round Fantasma na tela inicial. No Android (Chrome): toque em Instalar app ou no menu ⋮ › Instalar app. No iPhone (Safari): Compartilhar › Adicionar à Tela de Início. Depois de aberto uma vez com internet, ele funciona offline, com voz, cronômetro e animações. Para trazer o progresso de outra versão, use o backup abaixo.</p>
+    <p class="note" style="margin:0">Instale o Shadowboxing na tela inicial. No Android (Chrome): toque em Instalar app ou no menu ⋮ › Instalar app. No iPhone (Safari): Compartilhar › Adicionar à Tela de Início. Depois de aberto uma vez com internet, ele funciona offline, com voz, cronômetro e animações. Para trazer o progresso de outra versão, use o backup abaixo.</p>
     <div class="rowbtns"><button type="button" class="btn primary" id="bInstall" hidden>Instalar app</button><button type="button" class="btn" id="bkCopy">Copiar meu progresso</button></div>
     <label for="bkIn" class="eyebrow">Colar progresso</label><textarea id="bkIn" placeholder="Cole aqui o código copiado na outra versão"></textarea>
     <div class="rowbtns"><button type="button" class="btn" id="bkLoad">Restaurar progresso</button></div>

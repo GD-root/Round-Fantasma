@@ -9,7 +9,8 @@
     "nome": "Base",
     "desc": "Pés na largura dos ombros, pé esquerdo à frente e o direito um pouco atrás e para fora. Joelhos levemente flexionados, calcanhar de trás um pouco levantado e peso dividido entre as pernas.",
     "erro": "Pés na mesma linha (perde equilíbrio) ou pernas duras.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Panturrilhas, quadríceps e glúteos (sustentam a postura) e core."
    },
    {
     "id": "guarda",
@@ -17,7 +18,8 @@
     "nome": "Guarda",
     "desc": "Mãos na altura das bochechas, cotovelos fechados protegendo as costelas, queixo baixo e olhos no adversário imaginário.",
     "erro": "Baixar a mão que não está socando.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Ombros (deltoides), trapézio e antebraços, que seguram as mãos no alto."
    }
   ]
  },
@@ -31,7 +33,8 @@
     "nome": "Jab",
     "desc": "Mão da frente sai reta, girando o punho para baixo no final. Ombro sobe para proteger o queixo. Volta pelo mesmo caminho, rápido.",
     "erro": "Puxar a mão para trás antes de socar (telegrafar).",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Ombro da frente (deltoide anterior), tríceps e serrátil anterior."
    },
    {
     "id": "direto",
@@ -39,7 +42,8 @@
     "nome": "Direto (cross)",
     "desc": "Mão de trás sai reta. Gira o pé de trás (calcanhar para fora), o quadril e o ombro juntos. A mão da frente fica na guarda.",
     "erro": "Socar só com o braço, sem girar o corpo.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Peitoral, tríceps, ombros e oblíquos; glúteos e panturrilha de trás iniciam o giro."
    },
    {
     "id": "hook3",
@@ -47,7 +51,8 @@
     "nome": "Cruzado de esquerda (hook)",
     "desc": "Cotovelo na altura do punho, braço em gancho de uns 90°. Gira o pé da frente e o tronco para a direita. O golpe sai do giro, não do braço.",
     "erro": "Abrir demais o braço e perder a força.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Oblíquos, ombros, peitoral e dorsais; quadril e pé da frente giram o golpe."
    },
    {
     "id": "hook4",
@@ -55,7 +60,8 @@
     "nome": "Cruzado de direita (hook)",
     "desc": "Mesmo gancho com a mão de trás. Gira o pé de trás e o quadril. Use pouco: é um golpe de risco, geralmente depois de uma esquiva.",
     "erro": "Ficar com o rosto exposto após o golpe.",
-    "nivel": "intermediario"
+    "nivel": "intermediario",
+    "musculos": "Oblíquos, ombros e peitoral; glúteo e panturrilha de trás iniciam o giro."
    },
    {
     "id": "up5",
@@ -63,7 +69,8 @@
     "nome": "Upper de esquerda (uppercut)",
     "desc": "Dobra levemente os joelhos, palma virada para você, e sobe o punho de baixo para cima com o giro do quadril. Curto, perto do corpo.",
     "erro": "Baixar a mão antes (abre a guarda).",
-    "nivel": "intermediario"
+    "nivel": "intermediario",
+    "musculos": "Bíceps, ombros e oblíquos; quadríceps e glúteos empurram de baixo para cima."
    },
    {
     "id": "up6",
@@ -71,7 +78,8 @@
     "nome": "Upper de direita (uppercut)",
     "desc": "Mesmo movimento com a mão de trás, empurrando com a perna de trás.",
     "erro": "Inclinar o tronco para trás ao subir.",
-    "nivel": "intermediario"
+    "nivel": "intermediario",
+    "musculos": "Bíceps, ombros, oblíquos e a perna de trás, que empurra o chão."
    },
    {
     "id": "corpo",
@@ -79,7 +87,8 @@
     "nome": "Golpe no corpo",
     "desc": "Para socar o corpo, dobre os joelhos e desça o nível. A cabeça fica fora da linha central e a outra mão protege o rosto.",
     "erro": "Curvar a cintura em vez de dobrar os joelhos.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Quadríceps e glúteos (descem o nível), oblíquos e ombros."
    },
    {
     "id": "stepjab",
@@ -87,7 +96,35 @@
     "nome": "Jab com avanço",
     "desc": "O pé da frente avança junto com o jab, o de trás acompanha e você solta o segundo jab já na nova distância.",
     "erro": "Avançar o pé de trás primeiro e perder a base.",
-    "nivel": "avancado"
+    "nivel": "avancado",
+    "musculos": "Ombro da frente e tríceps; panturrilhas e quadríceps no avanço."
+   },
+   {
+    "id": "overhand",
+    "num": "",
+    "nome": "Overhand",
+    "desc": "Direto de trás que sai em arco, por cima da guarda do adversário. Dobra um pouco os joelhos e o tronco para fora da linha e desce o punho de cima para baixo.",
+    "erro": "Abrir o braço como um balanço largo, que demora e avisa o golpe.",
+    "nivel": "intermediario",
+    "musculos": "Ombros, dorsais, peitoral e oblíquos; o quadril gira como no direto."
+   },
+   {
+    "id": "jabsaindo",
+    "num": "",
+    "nome": "Jab saindo (jab em retirada)",
+    "desc": "Solta o jab enquanto recua o pé de trás. O adversário que avança encontra o jab e você já está fora da distância.",
+    "erro": "Recuar primeiro e socar depois: o jab perde o tempo.",
+    "nivel": "intermediario",
+    "musculos": "Ombro da frente e tríceps; panturrilhas e quadríceps no recuo."
+   },
+   {
+    "id": "blitz",
+    "num": "",
+    "nome": "Entrada explosiva (blitz)",
+    "desc": "Avanço curto e explosivo com o jab, seguido na hora do direto. Fecha a distância antes de o adversário reagir.",
+    "erro": "Pular com os dois pés e chegar sem base.",
+    "nivel": "avancado",
+    "musculos": "Panturrilhas, quadríceps e glúteos (explosão), ombros e tríceps."
    }
   ]
  },
@@ -101,7 +138,8 @@
     "nome": "Esquiva (slip)",
     "desc": "Pequena rotação do tronco e dos joelhos para tirar a cabeça da linha do golpe, para fora (direita) ou para dentro (esquerda). Movimento curto, uns 10 cm.",
     "erro": "Esquivar demais e perder a base.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Oblíquos, lombar e quadríceps (pequena flexão dos joelhos)."
    },
    {
     "id": "pendulo",
@@ -109,7 +147,8 @@
     "nome": "Pêndulo (bob and weave)",
     "desc": "Dobra os joelhos e passa a cabeça por baixo de um cruzado imaginário, em U, subindo do outro lado já em posição de socar.",
     "erro": "Abaixar curvando as costas e olhando para o chão.",
-    "nivel": "intermediario"
+    "nivel": "intermediario",
+    "musculos": "Quadríceps, glúteos, oblíquos e core (desce e sobe em U)."
    },
    {
     "id": "pullback",
@@ -117,7 +156,8 @@
     "nome": "Pull back",
     "desc": "Leva o tronco para trás, só o suficiente para o golpe passar na frente, sem mexer os pés. Volta na hora com o direto (pull counter).",
     "erro": "Inclinar demais e ficar sem base para devolver.",
-    "nivel": "intermediario"
+    "nivel": "intermediario",
+    "musculos": "Lombar, abdômen e panturrilhas, que seguram o equilíbrio para trás."
    },
    {
     "id": "bloqueio",
@@ -125,7 +165,8 @@
     "nome": "Bloqueio (block)",
     "desc": "Recebe o golpe na luva ou no antebraço, mantendo a mão colada ao rosto. Logo depois devolve.",
     "erro": "Fechar os olhos ou virar o rosto.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Antebraços, ombros e core, que absorvem o impacto."
    },
    {
     "id": "parry",
@@ -133,7 +174,8 @@
     "nome": "Parry",
     "desc": "Com a mão de trás, desvia o jab do adversário com um toque curto da palma, para baixo ou para o lado. Abre espaço para o direto.",
     "erro": "Movimento largo que deixa o rosto aberto.",
-    "nivel": "intermediario"
+    "nivel": "intermediario",
+    "musculos": "Ombro e antebraço da mão de trás; reflexo e coordenação."
    },
    {
     "id": "shoulder",
@@ -141,7 +183,8 @@
     "nome": "Shoulder roll",
     "desc": "Mão da frente baixa protegendo as costelas e ombro da frente alto cobrindo o queixo. O golpe do adversário rola no ombro enquanto você gira o tronco; volta na hora com o direto.",
     "erro": "Usar sem ter a esquiva e o bloqueio firmes: deixa o rosto aberto.",
-    "nivel": "avancado"
+    "nivel": "avancado",
+    "musculos": "Ombro da frente, oblíquos e core (giro do tronco)."
    },
    {
     "id": "checkhook",
@@ -149,7 +192,8 @@
     "nome": "Check hook",
     "desc": "Quando o adversário avança, você solta o cruzado de esquerda girando no pé da frente e sai do caminho dele no mesmo movimento.",
     "erro": "Soltar o cruzado sem girar: você fica parado na frente dele.",
-    "nivel": "avancado"
+    "nivel": "avancado",
+    "musculos": "Oblíquos, ombros e panturrilha da frente, que sustenta o giro."
    },
    {
     "id": "passoatras",
@@ -157,7 +201,8 @@
     "nome": "Passo atrás",
     "desc": "Passo para trás com o pé de trás primeiro, mantendo a base. Sai da distância e volta com contra-ataque.",
     "erro": "Andar para trás cruzando os pés.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Panturrilhas, quadríceps e glúteos."
    },
    {
     "id": "crosscounter",
@@ -165,7 +210,44 @@
     "nome": "Contra cruzado (cross counter)",
     "desc": "Quando o jab do adversário vem, você desce um pouco para dentro e solta o direto por cima do braço dele, no mesmo tempo.",
     "erro": "Esperar o jab terminar: o contra precisa sair junto com ele.",
-    "nivel": "avancado"
+    "nivel": "avancado",
+    "musculos": "Peitoral, tríceps, oblíquos e quadríceps (desce e solta ao mesmo tempo)."
+   },
+   {
+    "id": "cobertura",
+    "num": "",
+    "nome": "Cobertura alta (high guard)",
+    "desc": "As duas luvas sobem até a testa, cotovelos juntos na frente do rosto e do corpo, queixo baixo. Segura uma sequência e devolve quando ela acaba.",
+    "erro": "Fechar os olhos ou ficar só se cobrindo, sem devolver.",
+    "nivel": "basico",
+    "musculos": "Ombros, trapézio, antebraços e core."
+   },
+   {
+    "id": "cotovelo",
+    "num": "",
+    "nome": "Bloqueio com o cotovelo",
+    "desc": "Para proteger o corpo, desce o cotovelo colado às costelas e dobra um pouco os joelhos para o lado do golpe. A luva fica no rosto.",
+    "erro": "Abaixar a mão junto com o cotovelo e deixar o rosto aberto.",
+    "nivel": "basico",
+    "musculos": "Oblíquos, abdômen e quadríceps."
+   },
+   {
+    "id": "catch",
+    "num": "",
+    "nome": "Pegar o jab (catch)",
+    "desc": "A palma da mão de trás recebe o jab na frente do rosto, como quem pega uma bola, e volta na hora para devolver o direto.",
+    "erro": "Ir buscar o golpe longe do rosto e abrir a guarda.",
+    "nivel": "basico",
+    "musculos": "Ombro e antebraço da mão de trás; reflexo e coordenação."
+   },
+   {
+    "id": "pivoreverso",
+    "num": "",
+    "nome": "Pivô reverso",
+    "desc": "Com o peso no pé de trás, gira o corpo levando o pé da frente em arco. Sai do canto ou da corda e deixa o adversário de lado.",
+    "erro": "Girar com o peso no pé que está se mexendo.",
+    "nivel": "avancado",
+    "musculos": "Panturrilha e quadríceps da perna de trás, glúteos e core."
    }
   ]
  },
@@ -179,7 +261,8 @@
     "nome": "Passo à frente e atrás",
     "desc": "Para frente, o pé da frente vai primeiro e o de trás acompanha. Para trás, o inverso. A distância entre os pés não muda.",
     "erro": "Arrastar os pés ou cruzar as pernas.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Panturrilhas, quadríceps e glúteos."
    },
    {
     "id": "lateral",
@@ -187,7 +270,8 @@
     "nome": "Passo lateral",
     "desc": "Para a esquerda, pé esquerdo primeiro. Para a direita, pé direito primeiro. Sempre na ponta dos pés.",
     "erro": "Pular em vez de deslizar.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Adutores e abdutores (parte interna e externa da coxa), panturrilhas e glúteo médio."
    },
    {
     "id": "pivo",
@@ -195,7 +279,8 @@
     "nome": "Pivô (pivot)",
     "desc": "Com o peso no pé da frente, gira o corpo uns 45° a 90° trazendo o pé de trás em arco. Muda o ângulo de ataque.",
     "erro": "Girar com o peso no pé errado.",
-    "nivel": "intermediario"
+    "nivel": "intermediario",
+    "musculos": "Panturrilha e quadríceps da perna da frente, glúteos e core."
    },
    {
     "id": "circular",
@@ -203,7 +288,8 @@
     "nome": "Circular",
     "desc": "Anda em volta do adversário imaginário com passos curtos, mantendo a guarda e o jab ativo.",
     "erro": "Circular em direção à mão forte do outro.",
-    "nivel": "intermediario"
+    "nivel": "intermediario",
+    "musculos": "Panturrilhas, adutores e glúteo médio; resistência das pernas."
    },
    {
     "id": "angulo",
@@ -211,7 +297,8 @@
     "nome": "Ângulo",
     "desc": "Depois de uma combinação, sai para o lado em vez de recuar reto. Assim você ataca e o adversário não está mais na sua frente para devolver.",
     "erro": "Ficar na mesma linha depois de socar.",
-    "nivel": "intermediario"
+    "nivel": "intermediario",
+    "musculos": "Panturrilhas, glúteo médio e adutores."
    },
    {
     "id": "lstep",
@@ -219,7 +306,8 @@
     "nome": "L-step",
     "desc": "Recua o pé da frente para perto do de trás e gira o quadril, formando um L. O adversário erra o golpe e você contra-ataca do ângulo novo.",
     "erro": "Recuar em linha reta em vez de girar.",
-    "nivel": "avancado"
+    "nivel": "avancado",
+    "musculos": "Quadríceps, glúteos e oblíquos (recua e gira o quadril)."
    },
    {
     "id": "finta",
@@ -227,7 +315,8 @@
     "nome": "Finta",
     "desc": "Ameaça um golpe (um ombro ou um jab que não sai) para provocar uma reação e abrir espaço para o golpe de verdade.",
     "erro": "Fintar tanto que o ataque nunca sai.",
-    "nivel": "avancado"
+    "nivel": "avancado",
+    "musculos": "Ombros e core; trabalha mais a leitura e o tempo do que a força."
    },
    {
     "id": "troca",
@@ -235,7 +324,26 @@
     "nome": "Troca de base",
     "desc": "Inverte a perna da frente com um passo ou pulo curto, mantendo a guarda. Treina os dois lados.",
     "erro": "Ficar desequilibrado na troca.",
-    "nivel": "intermediario"
+    "nivel": "intermediario",
+    "musculos": "Panturrilhas, quadríceps e coordenação."
+   },
+   {
+    "id": "saltitar",
+    "num": "",
+    "nome": "Saltitar na base",
+    "desc": "Pequenos saltos na ponta dos pés, sem sair da base e sem tirar a guarda. Mantém as pernas prontas para entrar e sair.",
+    "erro": "Saltar alto demais e cansar à toa.",
+    "nivel": "basico",
+    "musculos": "Panturrilhas, tornozelos e resistência das pernas."
+   },
+   {
+    "id": "passoduplo",
+    "num": "",
+    "nome": "Passo duplo",
+    "desc": "Dois passos curtos e rápidos para frente (ou para trás) seguidos, mantendo a distância entre os pés. Cobre mais espaço sem perder a base.",
+    "erro": "Juntar os pés no meio do caminho.",
+    "nivel": "intermediario",
+    "musculos": "Panturrilhas, quadríceps e glúteos."
    }
   ]
  },
@@ -249,7 +357,8 @@
     "nome": "Polichinelo",
     "desc": "Abre pernas e braços ao mesmo tempo e volta. Ritmo leve e constante para aquecer.",
     "erro": "Bater os calcanhares no chão: fique na ponta dos pés.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Panturrilhas, ombros e coração e pulmões (aquecimento)."
    },
    {
     "id": "socos",
@@ -257,7 +366,8 @@
     "nome": "Socos rápidos",
     "desc": "1-2 sem parar em velocidade máxima, mãos voltando para a guarda a cada golpe. Os socos são curtos, sem força total.",
     "erro": "Abrir a guarda e socar com o ombro travado.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Ombros, tríceps e resistência cardiorrespiratória."
    },
    {
     "id": "agach",
@@ -265,7 +375,8 @@
     "nome": "Agachamento",
     "desc": "Pés na largura dos ombros, desce como se fosse sentar, coxas paralelas ao chão, joelhos na direção dos pés.",
     "erro": "Joelhos entrando para dentro.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Quadríceps, glúteos e posterior de coxa."
    },
    {
     "id": "agachsalto",
@@ -273,7 +384,8 @@
     "nome": "Agachamento com salto",
     "desc": "Agacha e salta explosivo, aterrissando macio já descendo para o próximo.",
     "erro": "Aterrissar com as pernas travadas.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Quadríceps, glúteos e panturrilhas, com explosão."
    },
    {
     "id": "flexao",
@@ -281,7 +393,8 @@
     "nome": "Flexão",
     "desc": "Corpo reto da cabeça ao calcanhar, mãos abaixo dos ombros, peito quase no chão.",
     "erro": "Quadril caído ou empinado.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Peitoral, tríceps, ombros e core."
    },
    {
     "id": "diamante",
@@ -289,7 +402,8 @@
     "nome": "Flexão diamante",
     "desc": "Mãos juntas formando um losango embaixo do peito. Trabalha mais o tríceps.",
     "erro": "Cotovelos abrindo para os lados.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Tríceps, peitoral (parte interna) e ombros."
    },
    {
     "id": "explosiva",
@@ -297,7 +411,8 @@
     "nome": "Flexão explosiva",
     "desc": "Empurra o chão com força para as mãos saírem do chão. Aterrissa com cotovelos levemente dobrados.",
     "erro": "Perder a prancha no impulso.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Peitoral, tríceps e ombros, com potência."
    },
    {
     "id": "burpee",
@@ -305,7 +420,8 @@
     "nome": "Burpee",
     "desc": "Agacha, mãos no chão, joga os pés para trás, peito no chão, volta e salta.",
     "erro": "Costas arqueadas na prancha.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Corpo inteiro: pernas, peitoral, ombros, core e cardio."
    },
    {
     "id": "prancha",
@@ -313,7 +429,8 @@
     "nome": "Prancha",
     "desc": "Apoio nos antebraços, corpo reto, abdômen e glúteo contraídos.",
     "erro": "Prender a respiração.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Abdômen, lombar, glúteos e ombros (isometria)."
    },
    {
     "id": "toque",
@@ -321,7 +438,8 @@
     "nome": "Prancha com toque no ombro",
     "desc": "Em posição de flexão, toca o ombro oposto alternando as mãos sem balançar o quadril.",
     "erro": "Abrir muito os pés para compensar.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Core antirrotação, ombros e peitoral."
    },
    {
     "id": "escalador",
@@ -329,7 +447,8 @@
     "nome": "Escalador",
     "desc": "Em prancha alta, puxa os joelhos alternados em direção ao peito, rápido.",
     "erro": "Quadril alto demais.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Abdômen, flexores do quadril, ombros e cardio."
    },
    {
     "id": "afundo",
@@ -337,7 +456,8 @@
     "nome": "Afundo alternado",
     "desc": "Passo grande à frente, desce até o joelho de trás quase tocar o chão, volta e troca.",
     "erro": "Joelho da frente passando muito da ponta do pé.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Quadríceps, glúteos e posterior de coxa; equilíbrio."
    },
    {
     "id": "canivete",
@@ -345,7 +465,116 @@
     "nome": "Abdominal canivete",
     "desc": "Deitado, sobe tronco e pernas ao mesmo tempo, mãos encontram os pés.",
     "erro": "Puxar o pescoço.",
-    "nivel": "basico"
+    "nivel": "basico",
+    "musculos": "Reto abdominal e flexores do quadril."
+   },
+   {
+    "id": "pranchalateral",
+    "num": "",
+    "nome": "Prancha lateral",
+    "desc": "Deitado de lado, apoio no antebraço e na lateral do pé. Sobe o quadril até o corpo ficar reto e segura. Troca de lado na metade.",
+    "erro": "Deixar o quadril cair ou ir para trás.",
+    "nivel": "basico",
+    "musculos": "Oblíquos, glúteo médio e ombro de apoio."
+   },
+   {
+    "id": "ponte",
+    "num": "",
+    "nome": "Ponte de glúteo",
+    "desc": "Deitado de costas, joelhos dobrados e pés no chão. Sobe o quadril apertando os glúteos até alinhar joelho, quadril e ombro, e desce devagar.",
+    "erro": "Subir arqueando a lombar em vez de usar o glúteo.",
+    "nivel": "basico",
+    "musculos": "Glúteos, posterior de coxa e lombar."
+   },
+   {
+    "id": "panturrilha",
+    "num": "",
+    "nome": "Elevação de panturrilha",
+    "desc": "Em pé, sobe na ponta dos pés o mais alto que conseguir, segura um instante e desce devagar.",
+    "erro": "Descer de uma vez, sem controle.",
+    "nivel": "basico",
+    "musculos": "Panturrilhas (gastrocnêmio e sóleo) e tornozelos."
+   },
+   {
+    "id": "joelhoalto",
+    "num": "",
+    "nome": "Corrida com joelho alto",
+    "desc": "Corrida no lugar trazendo os joelhos até a altura do quadril, braços na guarda.",
+    "erro": "Inclinar o tronco para trás para subir o joelho.",
+    "nivel": "basico",
+    "musculos": "Flexores do quadril, quadríceps, panturrilhas e cardio."
+   },
+   {
+    "id": "girorusso",
+    "num": "",
+    "nome": "Giro russo com socos",
+    "desc": "Sentado, tronco inclinado para trás e pés no chão (ou no ar). Gira o tronco de um lado para o outro soltando um soco curto em cada lado.",
+    "erro": "Girar só os braços, sem rodar o tronco.",
+    "nivel": "intermediario",
+    "musculos": "Oblíquos, reto abdominal e ombros."
+   },
+   {
+    "id": "bicicleta",
+    "num": "",
+    "nome": "Abdominal bicicleta",
+    "desc": "Deitado, mãos atrás da cabeça. Leva o cotovelo em direção ao joelho oposto enquanto estica a outra perna, alternando.",
+    "erro": "Puxar o pescoço com as mãos.",
+    "nivel": "intermediario",
+    "musculos": "Oblíquos, reto abdominal e flexores do quadril."
+   },
+   {
+    "id": "superman",
+    "num": "",
+    "nome": "Superman",
+    "desc": "Deitado de bruços, braços estendidos à frente. Sobe braços e pernas ao mesmo tempo, segura um instante e desce.",
+    "erro": "Jogar a cabeça para trás.",
+    "nivel": "intermediario",
+    "musculos": "Lombar, glúteos, posterior de coxa e ombros."
+   },
+   {
+    "id": "cadeira",
+    "num": "",
+    "nome": "Agachamento isométrico",
+    "desc": "Desce até as coxas ficarem quase paralelas ao chão e segura parado, guarda alta. Pode encostar as costas numa parede.",
+    "erro": "Joelhos passando muito da ponta dos pés ou entrando para dentro.",
+    "nivel": "intermediario",
+    "musculos": "Quadríceps e glúteos (isometria)."
+   },
+   {
+    "id": "afundolateral",
+    "num": "",
+    "nome": "Afundo lateral",
+    "desc": "Passo largo para o lado, dobra o joelho dessa perna e mantém a outra esticada. Volta e troca de lado.",
+    "erro": "Joelho dobrado entrando para dentro.",
+    "nivel": "intermediario",
+    "musculos": "Adutores, glúteos e quadríceps."
+   },
+   {
+    "id": "socoscima",
+    "num": "",
+    "nome": "Socos para cima",
+    "desc": "Em pé, socos alternados para o alto, esticando bem o braço, sem parar.",
+    "erro": "Arquear as costas: abdômen firme o tempo todo.",
+    "nivel": "intermediario",
+    "musculos": "Ombros (deltoides), trapézio e tríceps."
+   },
+   {
+    "id": "flexaot",
+    "num": "",
+    "nome": "Flexão com rotação",
+    "desc": "Faz a flexão e, ao subir, gira o corpo de lado erguendo um braço para o alto. Volta e repete para o outro lado.",
+    "erro": "Deixar o quadril cair no giro.",
+    "nivel": "intermediario",
+    "musculos": "Peitoral, ombros, tríceps e oblíquos."
+   },
+   {
+    "id": "sprawl",
+    "num": "",
+    "nome": "Sprawl",
+    "desc": "Da guarda, joga as pernas para trás e desce o quadril perto do chão, como numa defesa de queda. Volta na hora para a guarda.",
+    "erro": "Ficar com o quadril alto, em V.",
+    "nivel": "avancado",
+    "musculos": "Corpo inteiro: core, ombros, peitoral, quadril e cardio."
    }
   ]
  }

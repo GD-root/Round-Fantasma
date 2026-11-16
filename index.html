@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Boxe de sombra diário em três níveis, com cronômetro guiado por voz e boneco animado que mostra cada movimento.">
+<meta name="description" content="Shadowboxing: boxe de sombra diário em três níveis, com cronômetro guiado por voz e boneco animado que mostra cada movimento.">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png">
 <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Round Fantasma">
+<meta name="apple-mobile-web-app-title" content="Shadowboxing">
 
-<title>Round Fantasma</title>
+<title>Shadowboxing</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="theme-color" content="#13203A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
 
 <div class="wrap">
   <header class="top">
-    <div class="brand"><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="6" r="4" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M13 10v8M13 13l6-2M13 13l-4 4M13 18l5 6M13 18l-5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M19 11l5-1" stroke="var(--rope)" stroke-width="2.4" stroke-linecap="round"/></svg>Round <span>Fantasma</span></div>
+    <div class="brand"><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="6" r="4" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M13 10v8M13 13l6-2M13 13l-4 4M13 18l5 6M13 18l-5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M19 11l5-1" stroke="var(--rope)" stroke-width="2.4" stroke-linecap="round"/></svg>Shadow<span>boxing</span></div>
     <div class="chips"><span class="streak" id="cStreak" role="img"></span><button type="button" class="conf" id="cConf" aria-label="Configurações" title="Configurações"><svg viewBox="0 0 54 50" aria-hidden="true"><path d="M10 35V16a11 11 0 0 1 11-11h17a11 11 0 0 1 11 11v8a11 11 0 0 1-11 11z" fill="var(--rope)"/><path d="M12 21c-5-1-9 2-9 7s4 7 8 7h3z" fill="var(--rope)" stroke="#00000033" stroke-width="1.2"/><path d="M15 10a8 8 0 0 1 6-3" fill="none" stroke="#ffffff66" stroke-width="2.4" stroke-linecap="round"/><rect x="12" y="35" width="30" height="10" rx="3" fill="var(--ink)"/><rect x="12" y="39" width="30" height="2" fill="#ffffff55"/><text x="30.5" y="24.5" text-anchor="middle" font-family="Barlow,Arial,Helvetica,sans-serif" font-weight="800" font-size="10.5" fill="#fff">CONF</text></svg></button></div>
   </header>
 
@@ -44,7 +44,7 @@
 
 <div class="modal cfgm" id="cfg" hidden role="dialog" aria-modal="true" aria-labelledby="cfgTitle">
   <div class="sheet">
-    <div class="mhead"><div><div class="eyebrow">Round Fantasma</div><h3 id="cfgTitle">Configurações</h3></div><button type="button" class="x" id="cfgClose" aria-label="Fechar">×</button></div>
+    <div class="mhead"><div><div class="eyebrow">Shadowboxing</div><h3 id="cfgTitle">Configurações</h3></div><button type="button" class="x" id="cfgClose" aria-label="Fechar">×</button></div>
     <div id="cfgBody" class="cfgbody"></div>
   </div>
 </div>
@@ -56,6 +56,7 @@
     <div class="rowbtns"><button type="button" class="btn" id="mPause">Pausar</button><button type="button" class="btn" id="mSlow">Câmera lenta</button></div>
     <p id="mDesc" style="margin:0"></p>
     <p class="err" id="mErr" style="margin:0"></p>
+    <p class="mmus" id="mMus" style="margin:0"></p>
   </div>
 </div>
 

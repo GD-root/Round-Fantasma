@@ -1,7 +1,7 @@
 {
-  "name": "Round Fantasma",
-  "short_name": "Round Fantasma",
-  "description": "Boxe de sombra diário em três níveis, com cronômetro guiado por voz e boneco animado.",
+  "name": "Shadowboxing",
+  "short_name": "Shadowboxing",
+  "description": "Shadowboxing: boxe de sombra diário em três níveis, com cronômetro guiado por voz e boneco animado.",
   "lang": "pt-BR",
   "start_url": "./",
   "scope": "./",
