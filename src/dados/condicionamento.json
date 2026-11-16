@@ -1,0 +1,323 @@
+{
+ "E": {
+  "nome": "Geral leve",
+  "musculos": "Pernas, peitoral, core e cardio.",
+  "exercicios": [
+   {
+    "nome": "Agachamento",
+    "dica": "Desce devagar, sobe firme",
+    "anim": "agach"
+   },
+   {
+    "nome": "Flexão",
+    "dica": "Pode apoiar os joelhos no começo",
+    "anim": "flexao"
+   },
+   {
+    "nome": "Prancha",
+    "dica": "Abdômen travado, respira",
+    "anim": "prancha"
+   },
+   {
+    "nome": "Polichinelo",
+    "dica": "Ritmo leve e constante",
+    "anim": "polichinelo"
+   }
+  ]
+ },
+ "A": {
+  "nome": "Geral",
+  "musculos": "Pernas, peitoral, ombros, core e cardio.",
+  "exercicios": [
+   {
+    "nome": "Agachamento",
+    "dica": "Desce até a coxa paralela, sobe firme",
+    "anim": "agach"
+   },
+   {
+    "nome": "Flexão",
+    "dica": "Corpo em prancha, peito perto do chão",
+    "anim": "flexao"
+   },
+   {
+    "nome": "Socos rápidos",
+    "dica": "1-2 sem parar, mãos voltando pra guarda",
+    "anim": "socos"
+   },
+   {
+    "nome": "Prancha",
+    "dica": "Abdômen travado, quadril alinhado",
+    "anim": "prancha"
+   },
+   {
+    "nome": "Escalador",
+    "dica": "Joelhos rápidos em direção ao peito",
+    "anim": "escalador"
+   }
+  ]
+ },
+ "B": {
+  "nome": "Força",
+  "musculos": "Pernas, peitoral, core e ombros.",
+  "exercicios": [
+   {
+    "nome": "Burpee",
+    "dica": "Desce, peito no chão, salta",
+    "anim": "burpee"
+   },
+   {
+    "nome": "Flexão",
+    "dica": "Ritmo constante",
+    "anim": "flexao"
+   },
+   {
+    "nome": "Afundo alternado",
+    "dica": "Joelho de trás quase toca o chão",
+    "anim": "afundo"
+   },
+   {
+    "nome": "Prancha com toque no ombro",
+    "dica": "Sem balançar o quadril",
+    "anim": "toque"
+   }
+  ]
+ },
+ "C": {
+  "nome": "Explosão",
+  "musculos": "Pernas, tríceps, abdômen e cardio.",
+  "exercicios": [
+   {
+    "nome": "Socos rápidos",
+    "dica": "Máxima velocidade, guarda alta",
+    "anim": "socos"
+   },
+   {
+    "nome": "Agachamento com salto",
+    "dica": "Aterrissa macio",
+    "anim": "agachsalto"
+   },
+   {
+    "nome": "Flexão diamante",
+    "dica": "Mãos juntas embaixo do peito",
+    "anim": "diamante"
+   },
+   {
+    "nome": "Escalador",
+    "dica": "Rápido e contínuo",
+    "anim": "escalador"
+   },
+   {
+    "nome": "Abdominal canivete",
+    "dica": "Mãos encontram os pés",
+    "anim": "canivete"
+   },
+   {
+    "nome": "Burpee",
+    "dica": "Sem pausa no topo",
+    "anim": "burpee"
+   }
+  ]
+ },
+ "D": {
+  "nome": "Ritmo de luta",
+  "musculos": "Corpo inteiro com socos.",
+  "exercicios": [
+   {
+    "nome": "Burpee com 1-2",
+    "dica": "Levanta e solta o 1-2",
+    "anim": "burpee"
+   },
+   {
+    "nome": "Flexão explosiva",
+    "dica": "Mãos saem do chão",
+    "anim": "explosiva"
+   },
+   {
+    "nome": "Agachamento e socos",
+    "dica": "Desce, sobe soltando 1-2-3",
+    "anim": "agach"
+   },
+   {
+    "nome": "Prancha",
+    "dica": "Segura firme até o sino",
+    "anim": "prancha"
+   }
+  ]
+ },
+ "E2": {
+  "nome": "Core leve",
+  "musculos": "Abdômen, oblíquos, lombar e glúteos.",
+  "exercicios": [
+   {
+    "nome": "Prancha",
+    "dica": "Abdômen travado, respira",
+    "anim": "prancha"
+   },
+   {
+    "nome": "Ponte de glúteo",
+    "dica": "Sobe apertando o glúteo, desce devagar",
+    "anim": "ponte"
+   },
+   {
+    "nome": "Prancha lateral",
+    "dica": "Quadril alto; troca de lado na metade",
+    "anim": "pranchalateral"
+   },
+   {
+    "nome": "Elevação de panturrilha",
+    "dica": "Sobe na ponta, desce devagar",
+    "anim": "panturrilha"
+   }
+  ]
+ },
+ "E3": {
+  "nome": "Pernas leve",
+  "musculos": "Quadríceps, glúteos e panturrilhas.",
+  "exercicios": [
+   {
+    "nome": "Agachamento",
+    "dica": "Desce devagar, sobe firme",
+    "anim": "agach"
+   },
+   {
+    "nome": "Elevação de panturrilha",
+    "dica": "Sobe na ponta, desce devagar",
+    "anim": "panturrilha"
+   },
+   {
+    "nome": "Corrida com joelho alto",
+    "dica": "Ritmo leve, guarda alta",
+    "anim": "joelhoalto"
+   },
+   {
+    "nome": "Ponte de glúteo",
+    "dica": "Segura um instante lá em cima",
+    "anim": "ponte"
+   }
+  ]
+ },
+ "F": {
+  "nome": "Core e oblíquos",
+  "musculos": "Oblíquos, abdômen e lombar: a base da rotação do soco.",
+  "exercicios": [
+   {
+    "nome": "Giro russo com socos",
+    "dica": "Gira o tronco, soco curto em cada lado",
+    "anim": "girorusso"
+   },
+   {
+    "nome": "Prancha lateral",
+    "dica": "Quadril alto; troca de lado na metade",
+    "anim": "pranchalateral"
+   },
+   {
+    "nome": "Abdominal bicicleta",
+    "dica": "Cotovelo no joelho oposto, sem puxar o pescoço",
+    "anim": "bicicleta"
+   },
+   {
+    "nome": "Superman",
+    "dica": "Sobe braços e pernas juntos",
+    "anim": "superman"
+   },
+   {
+    "nome": "Escalador",
+    "dica": "Joelhos rápidos em direção ao peito",
+    "anim": "escalador"
+   }
+  ]
+ },
+ "G": {
+  "nome": "Pernas e glúteos",
+  "musculos": "Quadríceps, glúteos, adutores e panturrilhas.",
+  "exercicios": [
+   {
+    "nome": "Agachamento isométrico",
+    "dica": "Segura parado, guarda alta",
+    "anim": "cadeira"
+   },
+   {
+    "nome": "Afundo lateral",
+    "dica": "Passo largo para o lado, alterna",
+    "anim": "afundolateral"
+   },
+   {
+    "nome": "Ponte de glúteo",
+    "dica": "Sobe apertando o glúteo",
+    "anim": "ponte"
+   },
+   {
+    "nome": "Agachamento com salto",
+    "dica": "Aterrissa macio",
+    "anim": "agachsalto"
+   },
+   {
+    "nome": "Elevação de panturrilha",
+    "dica": "Sobe e desce sem parar",
+    "anim": "panturrilha"
+   }
+  ]
+ },
+ "H": {
+  "nome": "Ombros e braços",
+  "musculos": "Deltoides, tríceps, peitoral e trapézio: resistência para manter a guarda.",
+  "exercicios": [
+   {
+    "nome": "Socos para cima",
+    "dica": "Braço estica bem, abdômen firme",
+    "anim": "socoscima"
+   },
+   {
+    "nome": "Flexão com rotação",
+    "dica": "Gira e sobe o braço, alterna os lados",
+    "anim": "flexaot"
+   },
+   {
+    "nome": "Flexão diamante",
+    "dica": "Mãos juntas embaixo do peito",
+    "anim": "diamante"
+   },
+   {
+    "nome": "Prancha com toque no ombro",
+    "dica": "Sem balançar o quadril",
+    "anim": "toque"
+   },
+   {
+    "nome": "Socos rápidos",
+    "dica": "1-2 sem parar, guarda alta",
+    "anim": "socos"
+   }
+  ]
+ },
+ "I": {
+  "nome": "Potência de luta",
+  "musculos": "Corpo inteiro, explosão e cardio.",
+  "exercicios": [
+   {
+    "nome": "Sprawl",
+    "dica": "Joga as pernas para trás e volta na guarda",
+    "anim": "sprawl"
+   },
+   {
+    "nome": "Burpee com 1-2",
+    "dica": "Levanta e solta o 1-2",
+    "anim": "burpee"
+   },
+   {
+    "nome": "Corrida com joelho alto",
+    "dica": "Máxima velocidade",
+    "anim": "joelhoalto"
+   },
+   {
+    "nome": "Flexão explosiva",
+    "dica": "Mãos saem do chão",
+    "anim": "explosiva"
+   },
+   {
+    "nome": "Agachamento e socos",
+    "dica": "Desce, sobe soltando 1-2-3",
+    "anim": "agach"
+   }
+  ]
+ }
+}

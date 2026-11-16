@@ -1,0 +1,44 @@
+[
+ {
+  "nome": "Corda imaginária",
+  "dica": "Saltitos leves na ponta dos pés",
+  "seg": 60,
+  "anim": "pular"
+ },
+ {
+  "nome": "Rotação de ombros e quadril",
+  "dica": "Solta as articulações",
+  "seg": 45,
+  "anim": "guarda"
+ },
+ {
+  "nome": "Polichinelo",
+  "dica": "Ritmo moderado",
+  "seg": 45,
+  "anim": "polichinelo"
+ },
+ {
+  "nome": "Base e movimento",
+  "dica": "Anda na guarda, pra frente, trás e lados",
+  "seg": 60,
+  "anim": "passofrente"
+ },
+ {
+  "nome": "Socos soltos",
+  "dica": "Golpes leves, só soltando o corpo",
+  "seg": 60,
+  "anim": "socos"
+ },
+ {
+  "nome": "Agachamento lento",
+  "dica": "Aquece pernas e quadril",
+  "seg": 30,
+  "anim": "agach"
+ },
+ {
+  "nome": "Sombra leve",
+  "dica": "Movimento livre, 30% da força",
+  "seg": 60,
+  "anim": "socos"
+ }
+]
