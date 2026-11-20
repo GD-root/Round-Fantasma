@@ -304,7 +304,7 @@ html:root:root{
 .fundo-ac svg{display:block;width:100%;height:auto}
 .wrap{position:relative;z-index:1}
 body::before{background:transparent}
-.top{background:linear-gradient(#14110fee,#14110f00);padding-bottom:18px}
+.top{background:rgba(20,17,15,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);padding-bottom:12px;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
 .brand{text-shadow:0 2px 10px #000}
 /* Hoje: o cartão do treino começa logo abaixo do ringue */
 .tab{padding-top:calc(min(100vw,760px)*.5)}
