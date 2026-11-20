@@ -294,7 +294,7 @@ renderAll();
 window.RF={LEVELS,FOCI,GUIDE,DAY,ANIM,TECH,comboAnim};
 
 /* ---------- instalar o app ---------- */
-  if("serviceWorker" in navigator&&location.protocol.startsWith("http")){window.addEventListener("load",()=>{navigator.serviceWorker.register("./sw.js").catch(()=>{})})}
+  if("serviceWorker" in navigator&&location.protocol.startsWith("http")){window.addEventListener("load",()=>{/* versão nova publicada: recarrega uma vez, sozinha */const tinha=!!navigator.serviceWorker.controller;let rec=false;navigator.serviceWorker.addEventListener("controllerchange",()=>{if(tinha&&!rec){rec=true;location.reload()}});navigator.serviceWorker.register("./sw.js").then(r=>r.update()).catch(()=>{})})}
   let dp=null;
   const sync=()=>{const b=document.getElementById("bInstall");if(b)b.hidden=!dp};
   window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();dp=e;sync()});
