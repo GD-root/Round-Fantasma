@@ -1,6 +1,12 @@
 # Shadowboxing
 
-Boxe de sombra diário em três níveis (Básico, Intermediário e Avançado), com:
+Boxe de sombra diário em três níveis (Básico, Intermediário e Avançado), cada um com 3 módulos de uma semana
+(Básico 1, 2 e 3 e assim por diante), com:
+
+- sprints de golpes rápidos no fim de cada treino: 1 no Básico (30, 40 e 45 s); no Intermediário e no Avançado,
+  1, 2 e 3 sprints nos módulos 1, 2 e 3, mais longos e com mais golpes;
+- visual de academia de rua: o fundo mostra o ringue, onde o lutador treina manopla com o instrutor,
+  e no cronômetro o lutador bate no saco;
 
 - cronômetro guiado por voz, que chama as combinações em cada round;
 - boneco animado que demonstra cada golpe, defesa, movimentação e exercício;
@@ -18,10 +24,12 @@ src/
   app.js                telas, cronômetro, voz e progresso
   treino.js             monta os treinos por nível, semana e tema do dia
   boneco.js             poses, animações e o motor do boneco
+  lutador.js            o desenho "Academia": lutador, instrutor com manoplas e saco de pancada
+  academia.js           o cenário da academia de rua e o ringue animado do fundo
   dados/
     tecnicas.json         as técnicas por categoria: id, nome, descrição, erro comum, nível e músculos
-    temas.json            os 6 temas da semana: rounds e chamadas por nível, técnicas do dia
-    niveis.json           as 4 semanas de cada nível (rounds, tempo, descanso, condicionamento)
+    temas.json            os 6 temas da semana: rounds e chamadas por nível e módulo (basico, basico2, basico3...)
+    niveis.json           os 3 módulos de cada nível (rounds, tempo, descanso, condicionamento e sprint)
     condicionamento.json  conjuntos de exercícios, com nome e músculos
     aquecimento.json, volta-a-calma.json, dicas.json
 tests/                  testes automáticos

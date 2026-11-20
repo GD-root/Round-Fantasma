@@ -39,12 +39,27 @@ export const NOT_BASIC = new Set(Object.values(TECH).filter((t) => t.nivel !== "
 export function warmSteps(total){const out=[];let t=0;for(const w of WARM){if(t>=total)break;const d=Math.min(w[2],total-t);out.push({k:"warm",tag:"Aquecimento",title:w[0],sub:w[1],dur:d});t+=d}return out}
 export function coolSteps(total){const out=[];let t=0;for(const w of COOL){if(t>=total)break;const d=Math.min(w[2],total-t);out.push({k:"cool",tag:"Volta à calma",title:w[0],sub:w[1],dur:d});t+=d}return out}
 
-export function dayInfo(n){const i=n-1,w=Math.floor(i/7);return{n,i,w,phase:w%4,cycle:Math.floor(w/4)+1,di:i%7,wk:(w%4)+1}}
-export function pick(F,lv,c){
-  if(lv==="basico")return{rounds:F.basico.rounds,calls:c>=2?[...F.basico.calls,"1-2-3-2","Esquiva, 2-3"]:F.basico.calls};
-  if(lv==="intermediario")return{rounds:c%2===0?F.alt.rounds:F.inter.rounds,calls:c>=2?[...F.inter.calls,...F.alt.calls]:F.inter.calls};
-  return{rounds:c%2===0?F.alt.rounds:F.pro.rounds,calls:[...F.inter.calls.slice(4),...F.alt.calls,...F.pro.calls,...F.pro.calls]};
+/* Cada nível tem 3 módulos (1, 2 e 3), de uma semana cada; depois o ciclo recomeça com chamadas extras */
+export const NMOD = 3;
+export function dayInfo(n){const i=n-1,w=Math.floor(i/7);return{n,i,w,phase:w%NMOD,cycle:Math.floor(w/NMOD)+1,di:i%7,wk:(w%NMOD)+1}}
+/* Rounds e chamadas do tema, conforme o nível e o módulo (m = 0, 1 ou 2): cada módulo acrescenta golpes e sequências */
+export function pick(F,lv,c,m=0){
+  if(lv==="basico"){const B=[F.basico,F.basico2,F.basico3][m];return{rounds:B.rounds,calls:c>=2?[...B.calls,...(m<2?F[m?"basico3":"basico2"].calls.slice(0,3):F.inter.calls.slice(0,3))]:B.calls}}
+  if(lv==="intermediario"){
+    if(m===0)return{rounds:F.inter.rounds,calls:c>=2?[...F.inter.calls,...F.alt.calls.slice(0,4)]:F.inter.calls};
+    if(m===1)return{rounds:F.alt.rounds,calls:[...F.inter.calls.slice(4),...F.alt.calls]};
+    return{rounds:c%2===0?F.inter.rounds:F.alt.rounds,calls:[...F.alt.calls,...F.inter.calls.slice(6),...F.pro.calls.slice(0,c>=2?4:2)]};
+  }
+  if(m===0)return{rounds:F.pro.rounds,calls:[...F.inter.calls.slice(4),...F.alt.calls,...F.pro.calls]};
+  if(m===1)return{rounds:F.alt.rounds,calls:[...F.alt.calls,...F.pro.calls,...F.pro.calls]};
+  return{rounds:F.pro.rounds,calls:[...F.pro.calls,...F.pro.calls,...F.alt.calls.slice(4)]};
 }
+/* Sprint: golpes rápidos no fim dos rounds. As chamadas ficam mais longas a cada nível */
+export const SPRINT={
+  basico:{calls:["1-2","1-2","1-1-2","1-2-3"],every:5,sub:"Socos retos rápidos, sem parar. Guarda volta sempre."},
+  intermediario:{calls:["1-2-3","1-2-3-2","3-2","5-6","Rajada!"],every:4,sub:"Mais golpes: retos, cruzados e uppers no máximo."},
+  avancado:{calls:["1-2-3-2","5-6-3","3 corpo, 3","1-2-3-4","Rajada!","Esquiva e rajada"],every:3,sub:"Tudo no máximo: sequências longas, corpo e cabeça."},
+};
 export function buildDay(lv,n){
   const L=LEVELS[lv],I=dayInfo(n),W=L.weeks[I.phase],c=I.cycle;
   if(I.di===6){
@@ -53,16 +68,20 @@ export function buildDay(lv,n){
     steps.push(...coolSteps(240));
     return {...I,lv,rec:true,week:W,name:"Recuperação ativa",desc:"Dia de descanso. Se quiser se mexer, faça este treino leve de 20 minutos. Se preferir parar totalmente, também vale.",steps};
   }
-  const F=FOCI[I.di],P=pick(F,lv,c);
+  const F=FOCI[I.di],P=pick(F,lv,c,I.phase);
   const every=Math.max(5,W.every-Math.min(c-1,2));
   const finish=W.finish;
   const steps=[...warmSteps(W.warm)];
   const all=P.rounds;const R=W.rounds;
   const titles=R<=6?(R===6?all:[...all.slice(0,R-1),all[5]]):[...all.slice(0,5),...F[lv==="avancado"?"alt":"inter"].rounds.slice(0,R-6),all[5]];
   titles.forEach((t,r)=>{
-    steps.push({k:"round",tag:`Round ${r+1} de ${R}`,title:t,sub:finish?`Últimos ${finish} s em ritmo máximo`:(I.phase===0&&lv==="basico"?"Devagar e certo. Técnica antes de velocidade":"Técnica limpa, guarda sempre alta"),dur:W.work,calls:P.calls,every,finish});
+    steps.push({k:"round",tag:`Round ${r+1} de ${R}`,title:t,sub:finish?`Últimos ${finish} s em ritmo máximo`:(I.phase===0&&lv==="basico"&&r<3?"Devagar e certo. Técnica antes de velocidade":"Técnica limpa, guarda sempre alta"),dur:W.work,calls:P.calls,every,finish});
     if(r<titles.length-1)steps.push({k:"rest",tag:"Descanso",title:"Respira e solta os braços",sub:"",dur:W.rest});
   });
+  const SP=W.sprint,SPC=SPRINT[lv];
+  if(SP&&SP.n){steps.push({k:"rest",tag:"Descanso",title:"Prepara o sprint",sub:"",dur:W.rest});
+    for(let j=0;j<SP.n;j++){steps.push({k:"sprint",tag:`Sprint ${j+1} de ${SP.n}`,title:"Golpes rápidos",sub:SPC.sub,dur:SP.dur,calls:SPC.calls,every:SPC.every});
+      if(j<SP.n-1)steps.push({k:"rest",tag:"Descanso",title:"Respira fundo",sub:"",dur:SP.rest})}}
   const sets=["A","B","C","D"];const base=c>=2&&lv!=="basico"?sets[(sets.indexOf(W.cond.set)+c-1)%4]:W.cond.set;
   /* o conjunto do dia gira entre o da semana e os extras do nível: cada dia trabalha um grupo muscular */
   const pool=[base,...COND_EXTRA[lv]];const set=pool[(I.di+c-1)%pool.length];const CL=COND[set];

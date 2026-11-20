@@ -1,74 +1,72 @@
 {
  "basico": {
   "name": "Básico",
-  "who": "Voltando a treinar ou começando agora. Golpes retos, guarda, base e defesas simples.",
+  "who": "Começando agora ou voltando a treinar. Jab, direto, cruzado e upper, esquiva e pêndulo, em 3 módulos.",
   "weeks": [
    {
-    "name": "Adaptação",
-    "note": "4 rounds de 2 min, 1 min de descanso. Corpo se acostumando, ritmo leve.",
+    "name": "Básico 1 · Fundamentos",
+    "note": "4 rounds de 2 min. Jab, direto e cruzado, guarda e base. No fim, 1 sprint de 30 s.",
     "rounds": 4,
     "work": 120,
     "rest": 60,
     "warm": 360,
     "cool": 240,
-    "every": 18,
+    "every": 16,
     "finish": 0,
     "cond": {
      "set": "E",
      "n": 3,
      "work": 30,
      "rest": 30
+    },
+    "sprint": {
+     "n": 1,
+     "dur": 30,
+     "rest": 0
     }
    },
    {
-    "name": "Base",
-    "note": "5 rounds de 2 min, 1 min de descanso. Técnica limpa.",
+    "name": "Básico 2 · Combinações",
+    "note": "5 rounds de 2 min. Entram o upper, o cruzado de direita e a esquiva. No fim, 1 sprint de 40 s.",
     "rounds": 5,
     "work": 120,
     "rest": 60,
     "warm": 300,
     "cool": 180,
-    "every": 16,
-    "finish": 0,
-    "cond": {
-     "set": "E",
-     "n": 4,
-     "work": 30,
-     "rest": 30
-    }
-   },
-   {
-    "name": "Volume",
-    "note": "6 rounds de 2 min, 1 min de descanso. Mais tempo em movimento.",
-    "rounds": 6,
-    "work": 120,
-    "rest": 60,
-    "warm": 300,
-    "cool": 180,
-    "every": 15,
+    "every": 14,
     "finish": 0,
     "cond": {
      "set": "A",
      "n": 4,
      "work": 30,
      "rest": 30
+    },
+    "sprint": {
+     "n": 1,
+     "dur": 40,
+     "rest": 0
     }
    },
    {
-    "name": "Consolidação",
-    "note": "5 rounds de 3 min, 1 min de descanso. Primeiro contato com o round oficial.",
-    "rounds": 5,
-    "work": 180,
+    "name": "Básico 3 · Sequências",
+    "note": "6 rounds de 2 min. Sequências mais longas, pêndulo e golpes no corpo. No fim, 1 sprint de 45 s.",
+    "rounds": 6,
+    "work": 120,
     "rest": 60,
     "warm": 300,
-    "cool": 120,
-    "every": 14,
+    "cool": 180,
+    "every": 12,
     "finish": 0,
     "cond": {
      "set": "A",
      "n": 4,
      "work": 40,
      "rest": 20
+    },
+    "sprint": {
+     "n": 1,
+     "dur": 45,
+     "rest": 0
     }
    }
   ]
@@ -78,30 +76,13 @@
   "who": "Já treinou boxe. Combinações de 3 e 4 golpes, esquiva, pêndulo, ângulos e trabalho de corpo.",
   "weeks": [
    {
-    "name": "Base",
-    "note": "6 rounds de 2 min, 1 min de descanso. Readaptação e técnica.",
-    "rounds": 6,
-    "work": 120,
-    "rest": 60,
-    "warm": 300,
-    "cool": 180,
-    "every": 14,
-    "finish": 0,
-    "cond": {
-     "set": "A",
-     "n": 5,
-     "work": 40,
-     "rest": 20
-    }
-   },
-   {
-    "name": "Volume",
-    "note": "5 rounds de 3 min, 1 min de descanso. Round de luta.",
+    "name": "Intermediário 1 · Base",
+    "note": "5 rounds de 3 min. Combinações de 3 e 4 golpes com defesa. No fim, 1 sprint de 45 s com mais golpes.",
     "rounds": 5,
     "work": 180,
     "rest": 60,
     "warm": 300,
-    "cool": 120,
+    "cool": 150,
     "every": 12,
     "finish": 0,
     "cond": {
@@ -109,40 +90,55 @@
      "n": 4,
      "work": 40,
      "rest": 20
+    },
+    "sprint": {
+     "n": 1,
+     "dur": 45,
+     "rest": 0
     }
    },
    {
-    "name": "Intensidade",
-    "note": "5 rounds de 3 min, 45 s de descanso. Chamadas mais rápidas.",
-    "rounds": 5,
+    "name": "Intermediário 2 · Volume",
+    "note": "6 rounds de 3 min. Mais movimentação e ângulos. No fim, 2 sprints de 45 s com 30 s de descanso.",
+    "rounds": 6,
+    "work": 180,
+    "rest": 60,
+    "warm": 300,
+    "cool": 120,
+    "every": 10,
+    "finish": 0,
+    "cond": {
+     "set": "C",
+     "n": 5,
+     "work": 45,
+     "rest": 15
+    },
+    "sprint": {
+     "n": 2,
+     "dur": 45,
+     "rest": 30
+    }
+   },
+   {
+    "name": "Intermediário 3 · Intensidade",
+    "note": "6 rounds de 3 min, descanso de 45 s. No fim, 3 sprints de 45 s com 45 s de descanso.",
+    "rounds": 6,
     "work": 180,
     "rest": 45,
     "warm": 240,
     "cool": 120,
-    "every": 10,
-    "finish": 30,
-    "cond": {
-     "set": "C",
-     "n": 6,
-     "work": 45,
-     "rest": 15
-    }
-   },
-   {
-    "name": "Ritmo de luta",
-    "note": "6 rounds de 3 min, 30 s de descanso. Último minuto forte.",
-    "rounds": 6,
-    "work": 180,
-    "rest": 30,
-    "warm": 240,
-    "cool": 90,
     "every": 8,
-    "finish": 60,
+    "finish": 0,
     "cond": {
      "set": "D",
      "n": 4,
      "work": 45,
      "rest": 15
+    },
+    "sprint": {
+     "n": 3,
+     "dur": 45,
+     "rest": 45
     }
    }
   ]
@@ -152,71 +148,69 @@
   "who": "Boxe consolidado. Shoulder roll, check hook, fintas, L-step e sequências longas em ritmo de luta.",
   "weeks": [
    {
-    "name": "Base técnica",
-    "note": "5 rounds de 3 min, 45 s de descanso. Técnicas novas com calma.",
-    "rounds": 5,
+    "name": "Avançado 1 · Técnica",
+    "note": "6 rounds de 3 min. Fintas, contra-ataques e saídas. No fim, 1 sprint de 1 min.",
+    "rounds": 6,
     "work": 180,
     "rest": 45,
     "warm": 240,
     "cool": 120,
-    "every": 9,
+    "every": 8,
     "finish": 0,
     "cond": {
      "set": "C",
-     "n": 6,
+     "n": 5,
      "work": 45,
      "rest": 15
+    },
+    "sprint": {
+     "n": 1,
+     "dur": 60,
+     "rest": 0
     }
    },
    {
-    "name": "Volume",
-    "note": "6 rounds de 3 min, 45 s de descanso. Mais rounds, mesma qualidade.",
-    "rounds": 6,
+    "name": "Avançado 2 · Volume",
+    "note": "7 rounds de 3 min. Ritmo alto o round inteiro. No fim, 2 sprints de 1 min com 45 s de descanso.",
+    "rounds": 7,
     "work": 180,
     "rest": 45,
     "warm": 240,
-    "cool": 75,
-    "every": 8,
-    "finish": 30,
-    "cond": {
-     "set": "D",
-     "n": 3,
-     "work": 45,
-     "rest": 15
-    }
-   },
-   {
-    "name": "Intensidade",
-    "note": "6 rounds de 3 min, 30 s de descanso. Últimos 30 s no máximo.",
-    "rounds": 6,
-    "work": 180,
-    "rest": 30,
-    "warm": 240,
     "cool": 90,
     "every": 7,
-    "finish": 30,
+    "finish": 0,
     "cond": {
      "set": "D",
      "n": 4,
      "work": 45,
      "rest": 15
+    },
+    "sprint": {
+     "n": 2,
+     "dur": 60,
+     "rest": 45
     }
    },
    {
-    "name": "Ritmo de campeonato",
-    "note": "7 rounds de 3 min, 30 s de descanso. Último minuto forte em todo round.",
-    "rounds": 7,
+    "name": "Avançado 3 · Campeonato",
+    "note": "8 rounds de 3 min, descanso de 30 s. No fim, 3 sprints de 1 min com 1 min de descanso.",
+    "rounds": 8,
     "work": 180,
     "rest": 30,
     "warm": 240,
     "cool": 120,
     "every": 6,
-    "finish": 60,
+    "finish": 0,
     "cond": {
      "set": "D",
-     "n": 0,
+     "n": 3,
      "work": 45,
      "rest": 15
+    },
+    "sprint": {
+     "n": 3,
+     "dur": 60,
+     "rest": 60
     }
    }
   ]

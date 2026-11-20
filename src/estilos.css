@@ -96,6 +96,7 @@ h1,h2,h3{font-family:var(--display);text-transform:uppercase;margin:0;line-heigh
 .tl .dot{width:14px;height:14px;border-radius:50%;margin-top:4px;border:3px solid var(--panel);box-shadow:0 0 0 2px var(--muted);background:var(--muted)}
 .tl .dot.round{background:var(--rope);box-shadow:0 0 0 2px var(--rope)}
 .tl .dot.cond{background:var(--bell);box-shadow:0 0 0 2px var(--bell)}
+.tl .dot.sprint{background:#ff7a1a;box-shadow:0 0 0 2px #ff7a1a}
 .tl .dot.warm,.tl .dot.cool{background:var(--rest);box-shadow:0 0 0 2px var(--rest)}
 .tl .nm{font-weight:600;min-width:0}
 .tl .nm small{display:block;font-weight:400;color:var(--muted);font-size:13px}
@@ -265,6 +266,7 @@ textarea{width:100%;min-height:70px;font:13px/1.4 ui-monospace,Menlo,monospace;b
 /* cronômetro */
 .player{position:fixed;inset:0;z-index:40;background:var(--herobg);color:var(--herofg);display:flex;flex-direction:column;padding-top:calc(env(safe-area-inset-top,0px) + 14px);padding-bottom:calc(env(safe-area-inset-bottom,0px) + 14px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));transition:background .3s}
 .player.k-round{background:#8E1F1A}
+.player.k-sprint{background:#b8460e}
 .player.k-rest{background:#22574A}
 .player.k-cond{background:#7A5712}
 .ptop{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.9}
@@ -291,3 +293,63 @@ textarea{width:100%;min-height:70px;font:13px/1.4 ui-monospace,Menlo,monospace;b
 .tcard .tag.inter{background:transparent;color:var(--bell);box-shadow:inset 0 0 0 1.5px var(--bell)}
 .mmus{font-size:14px;color:var(--muted);border-left:3px solid var(--rest);padding-left:10px}
 .mmus:empty{display:none}
+
+/* =================== Tema "Academia de rua" (sobrepõe o que vem antes) ===================
+   Fundo fixo com a academia debaixo do viaduto; o conteúdo passa por cima em cartões de vidro escuro. */
+html:root:root{
+  --bg:#14110f;--panel:rgba(28,24,21,.84);--panel2:rgba(255,255,255,.06);--ink:#f4efe8;--muted:#b5aca2;--line:rgba(255,255,255,.13);
+  --rope:#ff3b30;--bell:#f2c94c;--rest:#4fb38f;--herobg:rgba(20,17,15,.78);--herofg:#f4efe8;--heromuted:#c9c0b6;--heroline:rgba(255,255,255,.18);
+  --figl:#ff6a5e;--figr:#f4efe8;--fighd:transparent;color-scheme:dark}
+.fundo-ac{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:760px;z-index:0;pointer-events:none}
+.fundo-ac svg{display:block;width:100%;height:auto}
+.wrap{position:relative;z-index:1}
+body::before{background:transparent}
+.top{background:linear-gradient(#14110fee,#14110f00);padding-bottom:18px}
+.brand{text-shadow:0 2px 10px #000}
+/* Hoje: o cartão do treino começa logo abaixo do ringue */
+.tab{padding-top:calc(min(100vw,760px)*.5)}
+.hero{display:block;min-height:0;background:var(--herobg);border:1px solid var(--line);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-radius:24px}
+.hero::before{display:none}
+.hero-txt{padding:18px 18px 18px}
+.hero h1 em{color:var(--rope)}
+.noringue{display:flex;align-items:baseline;gap:8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--heromuted)}
+.noringue b{font-family:var(--display);font-size:20px;letter-spacing:.02em;color:var(--bell);font-weight:800}
+.cta{border-radius:16px;box-shadow:0 8px 20px #ff3b3044}
+.card,.lvl,.phase,.wd,.tcard,.banner{-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.card{border-radius:22px}
+.wd{background:var(--panel);border-radius:16px}
+.wd.done{background:#f4efe8;color:#14110f}.wd.done small{color:#14110f}
+.btn{border-color:var(--ink);border-radius:14px}
+/* menu de baixo: botões redondos com gongo, manopla, luva e cinturão */
+.bnav{background:linear-gradient(#14110f00,#14110ff2 38%);border-top:0;padding-top:16px}
+.bnav button{gap:5px;padding:0 0 8px;color:var(--muted);letter-spacing:.06em}
+.bnav button.on::before{display:none}
+.bnav .bola{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:rgba(36,31,27,.92);border:1px solid var(--line);box-shadow:0 6px 16px #0008;transition:transform .15s,background .15s}
+.bnav .bola svg{width:26px;height:26px}
+.bnav button.on{color:var(--ink)}
+.bnav button.on .bola{background:var(--rope);border-color:var(--rope);color:#fff;transform:translateY(-3px);box-shadow:0 8px 20px #ff3b3055}
+/* player: a academia escurecida atrás, o tempo bem grande e o lutador no saco */
+.player{background:#0b0a09;isolation:isolate}
+.pfundo{position:absolute;inset:0;z-index:-1;overflow:hidden;filter:blur(3px) brightness(.36)}
+.pfundo svg{width:100%;height:auto;display:block}
+.player.k-round,.player.k-sprint,.player.k-rest,.player.k-cond{background:#0b0a09}
+.player::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(transparent 55%,var(--tinta,transparent))}
+.player.k-round{--tinta:#ff3b3033}.player.k-sprint{--tinta:#ff7a1a55}.player.k-rest{--tinta:#4fb38f33}.player.k-cond{--tinta:#f2c94c33}
+.player.k-sprint .ptag{color:#ffb070}
+.pbar i{background:var(--rope)}
+.ptime{font-size:clamp(96px,30vw,190px);text-shadow:0 6px 30px #000}
+.pfigwrap{max-height:30vh}
+.pfigwrap .fig{--figl:#ff6a5e;--figr:#fff}
+.pctl button{border-radius:999px;border-color:#ffffff55}
+.pctl button.main{background:#fff;color:#14110f}
+.phase{background:var(--panel)}.phase.now{background:rgba(48,20,18,.9)}
+/* dias: adversários de pé; treino feito = nocauteado no chão (src/dias.js) */
+.weekstrip{gap:2px}
+.weekstrip .wd,.weekstrip .wd.done,.weekstrip .wd.cur{background:none;border:0;border-radius:14px;padding:2px 0 4px;color:var(--muted);-webkit-backdrop-filter:none;backdrop-filter:none}
+.weekstrip .wd svg{width:100%;max-width:56px;height:auto;display:block}
+.weekstrip .wd small{font-size:10px;font-weight:800;letter-spacing:.08em;color:var(--muted);opacity:1}
+.weekstrip .wd.cur small{color:var(--rope)}
+.weekstrip .wd.done small{color:#f2c94c}
+.weekstrip .wd.sel{box-shadow:none;background:rgba(255,255,255,.07)}
+.weekstrip .wd.rec{border:0}
+@media (prefers-reduced-motion:no-preference){.weekstrip .wd.done svg g{transition:transform .4s}}
