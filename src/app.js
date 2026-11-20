@@ -2,6 +2,7 @@
 import "./estilos.css";
 import { FIGCFG, Fig, ANIM, comboAnim } from "./boneco.js";
 import { cenaRua, animaRingue } from "./academia.js";
+import { adversarioSVG } from "./dias.js";
 import { LEVELS, LKEYS, FOCI, TIPS, COND_AK, WARM_AK, GUIDE, TECH, FOCUS_TECH, ADV, NOT_BASIC, dayInfo, buildDay } from "./treino.js";
 
 const LVL_ICON={
@@ -90,7 +91,7 @@ function renderHoje(){
     </div>
   </section>
   ${levelUpBanner()}
-  <div class="weekstrip" role="list">${Array.from({length:7},(_,i)=>{const m=wst+i,dd=DAY(LV(),m);return `<button type="button" role="listitem" class="wd${dd.rec?" rec":""}${done()[m]?" done":""}${m===cur?" cur":""}${m===n&&n!==cur?" sel":""}" data-n="${m}" aria-label="Dia ${m}: ${esc(dd.name)}"><small>Dia</small><b>${m}</b><i></i></button>`}).join("")}</div>
+  <div class="weekstrip" role="list">${Array.from({length:7},(_,i)=>{const m=wst+i,dd=DAY(LV(),m);return `<button type="button" role="listitem" class="wd${dd.rec?" rec":""}${done()[m]?" done":""}${m===cur?" cur":""}${m===n&&n!==cur?" sel":""}" data-n="${m}" aria-label="Dia ${m}: ${esc(dd.name)}${done()[m]?" (feito)":""}">${adversarioSVG(m,done()[m]?"feito":m===cur?"hoje":"falta")}<small>${m===cur?"Hoje":dd.rec?"Leve":"Dia "+m}</small></button>`}).join("")}</div>
   ${dayDetail(d)}`;
   host.querySelectorAll(".wd").forEach(b=>b.onclick=()=>{const m=+b.dataset.n;selHoje=m===cur?null:m;renderHoje()});
   $("hStart").onclick=()=>start(d);
@@ -127,7 +128,7 @@ function renderPlano(){
   <div class="phases">${L.weeks.map((w,i)=>`<div class="phase${i===I.phase?" now":""}"><b>${esc(w.name)}</b><p>${esc(w.note)}</p></div>`).join("")}<div class="phase"><b>Novo ciclo</b><p>Volta ao módulo 1 com combinações a mais e chamadas um pouco mais rápidas.</p></div></div>
   <div class="card">
     <div class="weeknav"><button type="button" class="wbtn" id="wPrev" aria-label="Módulo anterior">‹</button><h3>${esc(W.name.split(" · ")[0])}${I.cycle>1?` · ciclo ${I.cycle}`:""}</h3><button type="button" class="wbtn" id="wToday">Hoje</button><button type="button" class="wbtn" id="wNext" aria-label="Próximo módulo">›</button></div>
-    <div class="weekstrip">${Array.from({length:7},(_,i)=>{const m=wst+i,dd=DAY(LV(),m);return `<button type="button" class="wd${dd.rec?" rec":""}${done()[m]?" done":""}${m===cur?" cur":""}${m===selPlan?" sel":""}" data-n="${m}" aria-label="Dia ${m}: ${esc(dd.name)}"><small>Dia</small><b>${m}</b><i></i></button>`}).join("")}</div>
+    <div class="weekstrip">${Array.from({length:7},(_,i)=>{const m=wst+i,dd=DAY(LV(),m);return `<button type="button" class="wd${dd.rec?" rec":""}${done()[m]?" done":""}${m===cur?" cur":""}${m===selPlan?" sel":""}" data-n="${m}" aria-label="Dia ${m}: ${esc(dd.name)}${done()[m]?" (feito)":""}">${adversarioSVG(m,done()[m]?"feito":m===cur?"hoje":"falta")}<small>${m===cur?"Hoje":dd.rec?"Leve":"Dia "+m}</small></button>`}).join("")}</div>
     <div class="sec-h"><div><div class="eyebrow">Dia ${selPlan}${selPlan===cur?" · treino de hoje":isDone?" · feito":""}</div><h3 style="font-size:28px">${esc(d.name)}</h3></div><div class="rowbtns"><button type="button" class="btn primary" id="pStart">Começar</button><button type="button" class="btn" id="pMark">${isDone?"Desmarcar":"Marcar feito"}</button></div></div>
   </div>
   ${dayDetail(d)}`;

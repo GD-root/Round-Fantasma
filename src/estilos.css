@@ -343,3 +343,13 @@ body::before{background:transparent}
 .pctl button{border-radius:999px;border-color:#ffffff55}
 .pctl button.main{background:#fff;color:#14110f}
 .phase{background:var(--panel)}.phase.now{background:rgba(48,20,18,.9)}
+/* dias: adversários de pé; treino feito = nocauteado no chão (src/dias.js) */
+.weekstrip{gap:2px}
+.weekstrip .wd,.weekstrip .wd.done,.weekstrip .wd.cur{background:none;border:0;border-radius:14px;padding:2px 0 4px;color:var(--muted);-webkit-backdrop-filter:none;backdrop-filter:none}
+.weekstrip .wd svg{width:100%;max-width:56px;height:auto;display:block}
+.weekstrip .wd small{font-size:10px;font-weight:800;letter-spacing:.08em;color:var(--muted);opacity:1}
+.weekstrip .wd.cur small{color:var(--rope)}
+.weekstrip .wd.done small{color:#f2c94c}
+.weekstrip .wd.sel{box-shadow:none;background:rgba(255,255,255,.07)}
+.weekstrip .wd.rec{border:0}
+@media (prefers-reduced-motion:no-preference){.weekstrip .wd.done svg g{transition:transform .4s}}
