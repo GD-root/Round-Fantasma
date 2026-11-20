@@ -60,7 +60,7 @@
     "nome": "Cruzado de direita (hook)",
     "desc": "Mesmo gancho com a mão de trás. Gira o pé de trás e o quadril. Use pouco: é um golpe de risco, geralmente depois de uma esquiva.",
     "erro": "Ficar com o rosto exposto após o golpe.",
-    "nivel": "intermediario",
+    "nivel": "basico",
     "musculos": "Oblíquos, ombros e peitoral; glúteo e panturrilha de trás iniciam o giro."
    },
    {
@@ -69,7 +69,7 @@
     "nome": "Upper de esquerda (uppercut)",
     "desc": "Dobra levemente os joelhos, palma virada para você, e sobe o punho de baixo para cima com o giro do quadril. Curto, perto do corpo.",
     "erro": "Baixar a mão antes (abre a guarda).",
-    "nivel": "intermediario",
+    "nivel": "basico",
     "musculos": "Bíceps, ombros e oblíquos; quadríceps e glúteos empurram de baixo para cima."
    },
    {
@@ -78,7 +78,7 @@
     "nome": "Upper de direita (uppercut)",
     "desc": "Mesmo movimento com a mão de trás, empurrando com a perna de trás.",
     "erro": "Inclinar o tronco para trás ao subir.",
-    "nivel": "intermediario",
+    "nivel": "basico",
     "musculos": "Bíceps, ombros, oblíquos e a perna de trás, que empurra o chão."
    },
    {
@@ -147,7 +147,7 @@
     "nome": "Pêndulo (bob and weave)",
     "desc": "Dobra os joelhos e passa a cabeça por baixo de um cruzado imaginário, em U, subindo do outro lado já em posição de socar.",
     "erro": "Abaixar curvando as costas e olhando para o chão.",
-    "nivel": "intermediario",
+    "nivel": "basico",
     "musculos": "Quadríceps, glúteos, oblíquos e core (desce e sobe em U)."
    },
    {

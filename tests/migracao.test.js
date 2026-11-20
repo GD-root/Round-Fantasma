@@ -1,5 +1,5 @@
 /* O que já existia na versão anterior continua igual: técnicas, animações e combinações antigas.
-   (Os treinos mudaram de propósito: mais chamadas e condicionamento variado. Veja treino.test.js.) */
+   (Os treinos mudaram de propósito: agora são 9 módulos com sprints, e mais chamadas. Veja treino.test.js.) */
 import { describe, expect, it } from "vitest";
 import { lerGabarito, json } from "./gabarito.js";
 import { TECH } from "../src/treino.js";
@@ -31,16 +31,4 @@ describe("igual à versão anterior", () => {
     }
     expect(corrigidas).toBeLessThan(15);
   });
-  it("os treinos têm a mesma estrutura de rounds, descanso e tempo da versão anterior", () => {
-    for (const [chave, antigo] of Object.entries(g.dias)) {
-      const [lv, n] = chave.split(":");
-      const novo = json(buildDayCache(lv, +n));
-      const forma = (d) => d.steps.map((s) => [s.k, s.dur, s.k === "round" ? s.title : ""]);
-      expect(forma(novo), chave).toEqual(forma(antigo));
-    }
-  });
 });
-
-import { buildDay } from "../src/treino.js";
-const cache = {};
-function buildDayCache(lv, n) { return cache[lv + n] || (cache[lv + n] = buildDay(lv, n)); }

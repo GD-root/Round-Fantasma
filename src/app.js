@@ -1,6 +1,7 @@
 /* Shadowboxing: telas, cronômetro, voz e progresso. */
 import "./estilos.css";
 import { FIGCFG, Fig, ANIM, comboAnim } from "./boneco.js";
+import { cenaRua, animaRingue } from "./academia.js";
 import { LEVELS, LKEYS, FOCI, TIPS, COND_AK, WARM_AK, GUIDE, TECH, FOCUS_TECH, ADV, NOT_BASIC, dayInfo, buildDay } from "./treino.js";
 
 const LVL_ICON={
@@ -16,16 +17,19 @@ const fmt=s=>{s=Math.max(0,Math.ceil(s));return Math.floor(s/60)+":"+String(s%60
 const fmtMin=s=>Math.round(s/60)+" min";
 const ymd=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
 const today=()=>ymd(new Date());
-const FIG_STYLES={pixel:{name:"Pixel art",desc:"Boxeador de jogo antigo, em pixels."},esboco:{name:"Esboço",desc:"Traço de lápis tremido, de caderno."},traco:{name:"Traço",desc:"Linhas finas, o desenho original."},neon:{name:"Neon",desc:"Linhas brilhantes com rastro."}};
+const FIG_STYLES={academia:{name:"Academia",desc:"Lutador de protetor, short e luvas, como na academia."},pixel:{name:"Pixel art",desc:"Boxeador de jogo antigo, em pixels."},esboco:{name:"Esboço",desc:"Traço de lápis tremido, de caderno."},traco:{name:"Traço",desc:"Linhas finas, o desenho original."},neon:{name:"Neon",desc:"Linhas brilhantes com rastro."}};
 const sw=t=>{t=String(t);if(store.hand!=="C")return t;const m={esquerda:"direita",direita:"esquerda",esquerdo:"direito",direito:"esquerdo",Esquerda:"Direita",Direita:"Esquerda",Esquerdo:"Direito",Direito:"Esquerdo"};return t.replace(/[Ee]squerd[ao]|[Dd]ireit[ao]/g,w=>m[w]||w)};
 const leadHand=()=>store.hand==="C"?"direita":"esquerda";
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
-let store={level:"intermediario",prog:{basico:{},intermediario:{},avancado:{}},voice:true,beep:true,hand:"D",figStyle:"traco"};
+let store={level:"intermediario",prog:{basico:{},intermediario:{},avancado:{}},voice:true,beep:true,hand:"D",figStyle:"academia"};
 try{const v=JSON.parse(localStorage.getItem("roundfantasma2")||"null");if(v)store=Object.assign(store,v);
  else{const o=JSON.parse(localStorage.getItem("roundfantasma")||"null");if(o&&o.done){store.prog.intermediario=o.done;store.voice=o.voice!==false;store.beep=o.beep!==false}}}catch(e){}
-LKEYS.forEach(k=>{if(!store.prog[k])store.prog[k]={}});syncFig();
-function syncFig(){FIGCFG.hand=store.hand==="C"?"C":"D";FIGCFG.style=FIG_STYLES[store.figStyle]?store.figStyle:"traco"}
+LKEYS.forEach(k=>{if(!store.prog[k])store.prog[k]={}});
+/* versão Academia: o lutador detalhado vira o desenho padrão (dá para voltar a outro estilo nas configurações) */
+if(!store.academia){store.figStyle="academia";store.academia=1}
+syncFig();
+function syncFig(){FIGCFG.hand=store.hand==="C"?"C":"D";FIGCFG.style=FIG_STYLES[store.figStyle]?store.figStyle:"academia"}
 function save(){try{localStorage.setItem("roundfantasma2",JSON.stringify(store))}catch(e){}}
 const LV=()=>store.level;const done=(lv=LV())=>store.prog[lv];
 const nextN=(lv=LV())=>{const ks=Object.keys(store.prog[lv]).map(Number);return ks.length?Math.max(...ks)+1:1};
@@ -57,7 +61,7 @@ function timeline(d){
     const last=rows[rows.length-1];if(last&&last.k===s.k){last.items.push(s.title);last.dur+=s.dur;return}
     rows.push({k:s.k,items:[s.title],dur:s.dur});
   });
-  const name={warm:"Aquecimento",cond:"Condicionamento",cool:"Volta à calma"};
+  const name={warm:"Aquecimento",sprint:"Sprint",cond:"Condicionamento",cool:"Volta à calma"};
   return `<ul class="tl">${rows.filter(r=>r.k!=="rests").map(r=>r.k==="round"?`<li><span class="dot round"></span><span class="nm">${esc(sw(r.nm))}<small>${r.sub}</small></span><span class="d">${fmt(r.dur)}</span></li>`:`<li><span class="dot ${r.k}"></span><span class="nm">${name[r.k]}<small>${r.items.map(esc).join(" · ")}</small></span><span class="d">${fmt(r.dur)}</span></li>`).join("")}</ul>${d.steps.some(s=>s.k==="rest")?`<p class="note" style="margin:0">Descanso entre rounds: ${fmt(d.steps.find(s=>s.k==="rest").dur)}.</p>`:""}`;
 }
 function dayDetail(d){
@@ -79,11 +83,11 @@ function renderHoje(){
     <div class="hero-txt">
       <div class="eyebrow">${label} · Dia ${n}</div>
       <h1>${esc(d.name).replace(/ (\S+)$/," <em>$1</em>")}</h1>
-      <div class="meta"><span>${LEVELS[LV()].name}</span><span>Ciclo ${d.cycle} · Sem ${d.wk} · ${esc(W.name)}</span><span>${fmtMin(total(d))}</span>${d.rec?"<span>Opcional</span>":""}</div>
+      <div class="meta"><span>${esc(W.name)}</span>${d.cycle>1?`<span>Ciclo ${d.cycle}</span>`:""}<span>${fmtMin(total(d))}</span>${d.rec?"<span>Opcional</span>":""}</div>
       <p style="margin:0;color:var(--heromuted);font-size:15px;max-width:42ch">${esc(d.desc)}</p>
+      <div class="noringue"><span>No ringue</span><b id="heroCall" aria-live="off"></b></div>
       <div class="hero-actions"><button type="button" class="cta" id="hStart">${ICO.play} ${isDone?"Treinar de novo":"Começar treino"}</button><button type="button" class="ghostbtn" id="hMark">${isDone?"Desmarcar":"Marcar feito"}</button></div>
     </div>
-    <div class="hero-fig"><div id="heroFigHost" style="width:100%;display:flex;justify-content:center"></div><div class="callout" id="heroCall" aria-live="off"></div></div>
   </section>
   ${levelUpBanner()}
   <div class="weekstrip" role="list">${Array.from({length:7},(_,i)=>{const m=wst+i,dd=DAY(LV(),m);return `<button type="button" role="listitem" class="wd${dd.rec?" rec":""}${done()[m]?" done":""}${m===cur?" cur":""}${m===n&&n!==cur?" sel":""}" data-n="${m}" aria-label="Dia ${m}: ${esc(dd.name)}"><small>Dia</small><b>${m}</b><i></i></button>`}).join("")}</div>
@@ -93,19 +97,20 @@ function renderHoje(){
   $("hMark").onclick=()=>{toggleDone(d);};
   const g=$("goUp");if(g)g.onclick=goUp;
   mountStatics(host);wireTech(host);
-  heroFig=new Fig($("heroFigHost"),{ghost:true,label:"Boneco fazendo sombra"});
   heroLoop(d);
 }
+/* O lutador e o instrutor do ringue, no fundo, treinam as combinações do dia */
+let pararRingue=null;
 function heroLoop(d){
-  const tok=++heroTok;const pool=d.rec?["1-2","Esquiva, 2","1-1-2"]:[...new Set(d.steps.find(s=>s.k==="round").calls)];
-  const step=()=>{if(tok!==heroTok||!heroFig||!heroFig.svg.isConnected)return;const c=pool[Math.floor(Math.random()*pool.length)];const el=$("heroCall");if(el)el.textContent=sw(c);
-    heroFig.play(comboAnim(c),{loop:false,onend:()=>{if(tok!==heroTok)return;heroFig.play(ANIM.base);setTimeout(step,1400)}})};
-  heroFig.play(ANIM.base);setTimeout(step,700);
+  const pool=d.rec?["1-2","Esquiva, 2","1-1-2"]:[...new Set(d.steps.find(s=>s.k==="round").calls)];
+  if(pararRingue)pararRingue();
+  const svg=$("fundoAc").querySelector("svg");
+  pararRingue=animaRingue(svg,pool,(c)=>{const el=$("heroCall");if(el)el.textContent=sw(c)});
 }
 function levelUpBanner(){
-  if(LV()==="avancado"||Object.keys(done()).length<28)return"";
+  if(LV()==="avancado"||Object.keys(done()).length<21)return"";
   const nx=LV()==="basico"?"Intermediário":"Avançado";
-  return `<div class="banner">${LVL_ICON[LV()==="basico"?"intermediario":"avancado"]}<div>Você completou um ciclo inteiro no ${LEVELS[LV()].name}. Se a técnica está limpa mesmo cansado, suba para o <button type="button" class="linkbtn" id="goUp">${nx}</button>. Seu progresso aqui fica guardado.</div></div>`;
+  return `<div class="banner">${LVL_ICON[LV()==="basico"?"intermediario":"avancado"]}<div>Você completou os 3 módulos do ${LEVELS[LV()].name}. Se a técnica está limpa mesmo cansado, suba para o <button type="button" class="linkbtn" id="goUp">${nx}</button>. Seu progresso aqui fica guardado.</div></div>`;
 }
 function goUp(){store.level=LV()==="basico"?"intermediario":"avancado";save();selHoje=null;selPlan=nextN();renderAll();toast("Nível "+LEVELS[LV()].name)}
 function toggleDone(d){const p=store.prog[d.lv];if(p[d.n])delete p[d.n];else p[d.n]={date:today(),min:Math.round(total(d)/60)};save();selHoje=null;selPlan=nextN();renderAll();toast(p[d.n]?"Dia "+d.n+" marcado como feito":"Dia "+d.n+" desmarcado")}
@@ -118,10 +123,10 @@ function renderPlano(){
   <div class="sec-h"><h2>Seu nível</h2><span class="eyebrow">cada nível tem seu progresso</span></div>
   <div class="levels">${LKEYS.map((k,i)=>{const nd=Object.keys(store.prog[k]).length,cy=dayInfo(nextN(k)).cycle;return `<button type="button" class="lvl${k===LV()?" on":""}" data-k="${k}" aria-pressed="${k===LV()}"><span class="ic">${LVL_ICON[k]}</span><span class="ln">${LEVELS[k].name}</span><span class="lw">${LEVELS[k].who}</span><span class="steps">${[0,1,2].map(j=>`<i class="${j<=i?"f":""}"></i>`).join("")}<small>${nd?`${nd} dias · ciclo ${cy}`:"novo"}</small></span></button>`}).join("")}</div>
   <div class="card"><div class="sec-h"><h3>Dicas do nível ${L.name}</h3></div><ul class="tips">${TIPS[LV()].map(t=>`<li>${esc(t)}</li>`).join("")}</ul></div>
-  <div class="sec-h"><h2>O ciclo</h2><span class="eyebrow">4 semanas · depois recomeça</span></div>
-  <div class="phases">${L.weeks.map((w,i)=>`<div class="phase${i===I.phase?" now":""}"><b>Sem. ${i+1} · ${esc(w.name)}</b><p>${esc(w.note)}</p></div>`).join("")}<div class="phase"><b>Novo ciclo</b><p>Volta à semana 1 com rounds diferentes e chamadas um pouco mais rápidas.</p></div></div>
+  <div class="sec-h"><h2>Os módulos</h2><span class="eyebrow">1 semana cada · depois recomeça</span></div>
+  <div class="phases">${L.weeks.map((w,i)=>`<div class="phase${i===I.phase?" now":""}"><b>${esc(w.name)}</b><p>${esc(w.note)}</p></div>`).join("")}<div class="phase"><b>Novo ciclo</b><p>Volta ao módulo 1 com combinações a mais e chamadas um pouco mais rápidas.</p></div></div>
   <div class="card">
-    <div class="weeknav"><button type="button" class="wbtn" id="wPrev" aria-label="Semana anterior">‹</button><h3>Ciclo ${I.cycle} · Semana ${I.wk}</h3><button type="button" class="wbtn" id="wToday">Hoje</button><button type="button" class="wbtn" id="wNext" aria-label="Próxima semana">›</button></div>
+    <div class="weeknav"><button type="button" class="wbtn" id="wPrev" aria-label="Módulo anterior">‹</button><h3>${esc(W.name.split(" · ")[0])}${I.cycle>1?` · ciclo ${I.cycle}`:""}</h3><button type="button" class="wbtn" id="wToday">Hoje</button><button type="button" class="wbtn" id="wNext" aria-label="Próximo módulo">›</button></div>
     <div class="weekstrip">${Array.from({length:7},(_,i)=>{const m=wst+i,dd=DAY(LV(),m);return `<button type="button" class="wd${dd.rec?" rec":""}${done()[m]?" done":""}${m===cur?" cur":""}${m===selPlan?" sel":""}" data-n="${m}" aria-label="Dia ${m}: ${esc(dd.name)}"><small>Dia</small><b>${m}</b><i></i></button>`}).join("")}</div>
     <div class="sec-h"><div><div class="eyebrow">Dia ${selPlan}${selPlan===cur?" · treino de hoje":isDone?" · feito":""}</div><h3 style="font-size:28px">${esc(d.name)}</h3></div><div class="rowbtns"><button type="button" class="btn primary" id="pStart">Começar</button><button type="button" class="btn" id="pMark">${isDone?"Desmarcar":"Marcar feito"}</button></div></div>
   </div>
@@ -169,7 +174,7 @@ function renderProgresso(){
   host.innerHTML=`<div class="sec-h"><h2>Progresso</h2></div>
   <div class="stats"><div class="stat"><b>${all.length}</b><small>treinos</small></div><div class="stat"><b>${all.reduce((a,x)=>a+(x.min||0),0)}</b><small>minutos</small></div><div class="stat"><b>${streak()}</b><small>dias seguidos</small></div><div class="stat"><b>${bestStreak()}</b><small>maior sequência</small></div></div>
   <div class="card"><div class="sec-h"><h3>Últimas 12 semanas</h3><span class="eyebrow">cada quadrado é um dia</span></div><div class="heat">${cells.join("")}</div></div>
-  <div class="card"><h3>Por nível</h3>${LKEYS.map(k=>{const nd=Object.keys(store.prog[k]).length;return `<div class="lbar"><span>${LEVELS[k].name}</span><div><i style="width:${Math.min(100,nd/28*100)}%"></i></div><span>${nd}/28</span></div>`}).join("")}<p class="note" style="margin:0">A barra mostra o primeiro ciclo de 28 dias de cada nível.</p></div>`;
+  <div class="card"><h3>Por nível</h3>${LKEYS.map(k=>{const nd=Object.keys(store.prog[k]).length;return `<div class="lbar"><span>${LEVELS[k].name}</span><div><i style="width:${Math.min(100,nd/21*100)}%"></i></div><span>${nd}/21</span></div>`}).join("")}<p class="note" style="margin:0">A barra mostra o primeiro ciclo de 28 dias de cada nível.</p></div>`;
 }
 function renderConfig(){
   const host=$("cfgBody");
@@ -228,23 +233,24 @@ function start(d){
   const steps=[{k:"prep",tag:"Prepare-se",title:d.name,sub:"Fica na guarda",dur:5},...d.steps];
   P={d,steps,idx:0,left:steps[0].dur,running:true,last:performance.now(),nextCall:0,lastCall:"",said10:false,saidFin:false,lastPip:null};
   $("player").hidden=false;document.body.style.overflow="hidden";heroTok++;
-  $("pFig").innerHTML="";pFig=new Fig($("pFig"),{ghost:true,label:"Demonstração do movimento"});
+  $("pFig").innerHTML="";pFig=new Fig($("pFig"),{ghost:true,largo:true,label:"Demonstração do movimento"});
   wake();enter();loop();
 }
 function figFor(s){
   if(s.k==="cond")return ANIM[COND_AK[s.title]]||ANIM.base;
   if(s.k==="warm")return ANIM[WARM_AK[s.title]]||ANIM.base;
   if(s.k==="round"||s.k==="prep")return ANIM.base;
+  if(s.k==="sprint")return comboAnim("Rajada!");
   return ANIM.respira;
 }
 function enter(){
   const s=P.steps[P.idx];P.left=s.dur;P.said10=false;P.saidFin=false;P.nextCall=s.calls?s.dur-4:0;$("pCall").textContent="";
-  $("player").className="player"+(["round","rest","cond"].includes(s.k)?" k-"+s.k:"");
+  $("player").className="player"+(["round","rest","cond","sprint"].includes(s.k)?" k-"+s.k:"");
   $("pTag").textContent=s.tag;$("pTitle").textContent=sw(s.title);$("pSub").textContent=s.sub||"";
   const n=P.steps[P.idx+1];$("pNext").textContent=n?`A seguir: ${n.title} (${fmt(n.dur)})`:"Último bloco";
   $("pDay").textContent=`Dia ${P.d.n} · ${P.d.name}`;
-  if(pFig)pFig.play(figFor(s),{force:true});
-  if(s.k==="round"){bell();speak(s.title)}else if(s.k==="cond"){pip();speak(s.title)}else if(s.k==="rest"&&P.idx>0){tone(660,.4)}
+  if(pFig){pFig.opt.saco=s.k==="round"||s.k==="sprint";pFig.play(figFor(s),{force:true})}
+  if(s.k==="round"){bell();speak(s.title)}else if(s.k==="sprint"){bell();speak("Sprint! Golpes rápidos, no máximo")}else if(s.k==="cond"){pip();speak(s.title)}else if(s.k==="rest"&&P.idx>0){tone(660,.4)}
   paint();
 }
 function paint(){
@@ -254,7 +260,7 @@ function paint(){
   $("bPlay").textContent=P.ended?"Fechar":P.running?"Pausar":"Continuar";
 }
 function call(t){t=sw(t);const c=$("pCall");c.textContent=t;c.classList.remove("flash");void c.offsetWidth;c.classList.add("flash");speak(t);
-  if(pFig)pFig.play(comboAnim(t),{loop:false,force:true,onend:()=>{if(P&&P.steps[P.idx].k==="round")pFig.play(ANIM.base,{force:true})}})}
+  if(pFig)pFig.play(comboAnim(t),{loop:false,force:true,onend:()=>{if(P&&["round","sprint"].includes(P.steps[P.idx].k))pFig.play(P.steps[P.idx].k==="sprint"?comboAnim("Rajada!"):ANIM.base,{force:true})}})}
 function loop(){
   if(!P)return;const now=performance.now(),dt=(now-P.last)/1000;P.last=now;
   if(P.running&&!P.ended){
@@ -264,8 +270,8 @@ function loop(){
       else{let t;do{t=s.calls[Math.floor(Math.random()*s.calls.length)]}while(t===P.lastCall&&s.calls.length>1);P.lastCall=t;call(t)}
       P.nextCall=P.left-s.every;
     }
-    if(!P.said10&&P.left<=10&&s.k==="round"){P.said10=true;tone(1000,.12);tone(1000,.12,.18)}
-    if(P.left<=3.05&&P.left>0&&s.k!=="round"&&Math.ceil(P.left)!==P.lastPip){P.lastPip=Math.ceil(P.left);pip()}
+    if(!P.said10&&P.left<=10&&(s.k==="round"||s.k==="sprint")){P.said10=true;tone(1000,.12);tone(1000,.12,.18)}
+    if(P.left<=3.05&&P.left>0&&s.k!=="round"&&s.k!=="sprint"&&Math.ceil(P.left)!==P.lastPip){P.lastPip=Math.ceil(P.left);pip()}
     if(P.left<=0){if(P.idx<P.steps.length-1){P.idx++;enter()}else{finish();return}}
   }
   paint();requestAnimationFrame(loop);
@@ -281,6 +287,8 @@ $("bExit").onclick=exit;
 document.addEventListener("visibilitychange",()=>{if(P&&P.running&&document.visibilityState==="visible")wake()});
 
 curTab=TABS.includes(location.hash.slice(1))?location.hash.slice(1):"hoje";
+/* o cenário da academia: no fundo das abas e, escurecido, atrás do cronômetro */
+$("fundoAc").innerHTML=cenaRua();$("pFundo").innerHTML=cenaRua().replace('class="atores"','class="vazio"');
 renderAll();
 window.RF={LEVELS,FOCI,GUIDE,DAY,ANIM,TECH,comboAnim};
 

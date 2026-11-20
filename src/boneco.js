@@ -1,8 +1,9 @@
 /* Boneco de traço: poses, animações e o motor que desenha. Não depende das telas. */
 // ===== Boneco de traço: poses, animações e motor =====
-const FIGCFG={hand:"D",style:"traco"};
+import { lutadorSVG, pesSVG, sacoSVG, balancaSaco } from "./lutador.js";
+const FIGCFG={hand:"D",style:"academia"};
 const GLOVE_R={traco:7,neon:6};
-const CUSTOM=new Set(["pixel","esboco"]);
+const CUSTOM=new Set(["pixel","esboco","academia"]);
 // ---- pixel art: rasteriza a pose numa grade de 4x4 ----
 const PX=4,PW=50,PH=53;
 function segDist(px,py,a,b){const dx=b[0]-a[0],dy=b[1]-a[1],L=dx*dx+dy*dy;let t=L?((px-a[0])*dx+(py-a[1])*dy)/L:0;t=Math.max(0,Math.min(1,t));const x=a[0]+t*dx-px,y=a[1]+t*dy-py;return Math.sqrt(x*x+y*y)}
@@ -238,7 +239,7 @@ const REDUCED=(()=>{try{return matchMedia("(prefers-reduced-motion: reduce)").ma
 class Fig{
   constructor(host,opt={}){
     this.opt=opt;this.id="f"+(++figUid);this.speed=1;this.paused=false;this.style=opt.style||FIGCFG.style;
-    const svg=document.createElementNS(NS,"svg");svg.setAttribute("viewBox","0 0 200 210");svg.setAttribute("class","fig fs-"+this.style+(opt.cls?" "+opt.cls:""));svg.setAttribute("role","img");
+    const svg=document.createElementNS(NS,"svg");svg.setAttribute("viewBox",opt.saco||opt.largo?"-12 -62 244 274":"0 0 200 210");svg.setAttribute("class","fig fs-"+this.style+(opt.cls?" "+opt.cls:""));svg.setAttribute("role","img");
     if(opt.label)svg.setAttribute("aria-label",opt.label);
     svg.innerHTML=`<defs><marker id="${this.id}a" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fhead"/></marker></defs><line class="fground" x1="10" y1="200" x2="190" y2="200"/><path class="ftrail"/><g class="fmarks"></g><g class="fghost"></g><g class="fmain"></g>`;
     host.appendChild(svg);this.svg=svg;this.view=null;
@@ -264,7 +265,13 @@ class Fig{
     [["fmain",main],["fghost",main],["ftrail",main],["fmarks",marks]].forEach(([c,t])=>{const g=this.svg.querySelector("."+c);if(t)g.setAttribute("transform",t);else g.removeAttribute("transform")});
   }
   draw(p,els){
-    if(els.__g){els.__g.innerHTML=this.style==="pixel"?rasterize(pixelShapes(p,this.view,this.anim&&this.anim.front)):sketchSVG(p,this.view);return}
+    if(els.__g){
+      if(this.style==="academia"){
+        let s="";
+        if(this.opt.saco&&this.view==="body"){const now=performance.now(),dt=this.bagT?Math.min(50,now-this.bagT):16;this.bagT=now;this.bag=this.bag||{ang:0,vel:0};
+          s+=sacoSVG(190,balancaSaco(this.bag,Math.max(p.lh[0],p.rh[0]),190,dt))}
+        els.__g.innerHTML=s+(this.view==="top"?pesSVG(p):lutadorSVG(p,!!(this.anim&&this.anim.front)));return}
+      els.__g.innerHTML=this.style==="pixel"?rasterize(pixelShapes(p,this.view,this.anim&&this.anim.front)):sketchSVG(p,this.view);return}
     BONES[this.view].forEach(([a,b])=>{const l=els[a+b];if(!p[a]||!p[b])return;l.setAttribute("x1",p[a][0].toFixed(1));l.setAttribute("y1",p[a][1].toFixed(1));l.setAttribute("x2",p[b][0].toFixed(1));l.setAttribute("y2",p[b][1].toFixed(1))});
     if(els.shl){[["l","lp","lk"],["r","rp","rk"]].forEach(([c,a,b])=>{const e=els["sh"+c];e.setAttribute("x1",p[a][0].toFixed(1));e.setAttribute("y1",(p[a][1]-6).toFixed(1));e.setAttribute("x2",(p[a][0]+(p[b][0]-p[a][0])*.42).toFixed(1));e.setAttribute("y2",(p[a][1]+(p[b][1]-p[a][1])*.42).toFixed(1))})}
     if(this.view==="body"){els.head.setAttribute("cx",p.h[0].toFixed(1));els.head.setAttribute("cy",p.h[1].toFixed(1));

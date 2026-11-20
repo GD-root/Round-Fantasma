@@ -95,7 +95,47 @@
    "jabsaindo",
    "blitz",
    "saltitar"
-  ]
+  ],
+  "basico2": {
+   "rounds": [
+    "Jab e direto soltos",
+    "1-2 com cruzado no final",
+    "Jab duplo e 1-2-3",
+    "1-2, passo atrás, 1-2",
+    "Jab e esquiva",
+    "Livre: o jab manda, o 1-2-3 fecha"
+   ],
+   "calls": [
+    "1-2",
+    "1-2-3",
+    "1-1-2",
+    "1-2, passo atrás",
+    "Jab, esquiva, 2",
+    "1-2-3, passo atrás",
+    "1, 2 no corpo",
+    "Saltita, 1-2-3"
+   ]
+  },
+  "basico3": {
+   "rounds": [
+    "1-2-3 em movimento",
+    "Jab duplo, direto e cruzado",
+    "1-2 e sai",
+    "Jab, esquiva, 1-2",
+    "Jab e upper",
+    "Livre: distância e sequência"
+   ],
+   "calls": [
+    "1-1-2-3",
+    "1-2-3-2",
+    "1-2, esquiva, 2",
+    "Jab, passo atrás, 1-2",
+    "1-2-5",
+    "1-1-2, passo lateral",
+    "1-2-3, esquiva",
+    "Saltita, 1-1-2"
+   ]
+  }
  },
  {
   "name": "Defesa e contra",
@@ -201,7 +241,47 @@
    "cotovelo",
    "catch",
    "pivoreverso"
-  ]
+  ],
+  "basico2": {
+   "rounds": [
+    "Bloqueia e devolve 1-2",
+    "Esquiva e direto",
+    "Esquiva dos dois lados",
+    "Cobertura e 1-2-3",
+    "Passo atrás e 2-3",
+    "Livre: defende e contra-ataca"
+   ],
+   "calls": [
+    "Esquiva, 2-3",
+    "Bloqueia, 1-2-3",
+    "Esquiva, esquiva, 2",
+    "Cobertura, 3-2",
+    "Passo atrás, 2-3",
+    "Esquiva e volta à guarda",
+    "Pega o jab, 2-3",
+    "Bloqueia, 3"
+   ]
+  },
+  "basico3": {
+   "rounds": [
+    "Pêndulo devagar",
+    "Pêndulo e cruzado",
+    "Esquiva, volta e contra",
+    "Bloqueio, esquiva, 1-2",
+    "Pêndulo, 2-3",
+    "Livre: cabeça viva"
+   ],
+   "calls": [
+    "Pêndulo, 3",
+    "Pêndulo, 3-2",
+    "Esquiva, 2, pêndulo",
+    "Esquiva, 2-3-2",
+    "Bloqueia, esquiva, 2",
+    "Pêndulo, 1-2-3",
+    "Cobertura, pêndulo, 2",
+    "Esquiva e volta à guarda, 1-2"
+   ]
+  }
  },
  {
   "name": "Corpo e cabeça",
@@ -298,7 +378,47 @@
    "up6",
    "cotovelo",
    "overhand"
-  ]
+  ],
+  "basico2": {
+   "rounds": [
+    "Jab no corpo e cabeça",
+    "1-2 no corpo, sobe com o 3",
+    "Upper no corpo",
+    "Cruzado no corpo",
+    "Desce e sobe",
+    "Livre: dois níveis"
+   ],
+   "calls": [
+    "1, 2 no corpo",
+    "1-2, 3 no corpo",
+    "3 corpo, 3 cabeça",
+    "1-2-5",
+    "2 no corpo, 3",
+    "Desce e 1-2-3",
+    "1-6-3",
+    "5-6"
+   ]
+  },
+  "basico3": {
+   "rounds": [
+    "1-2-3 no corpo e cabeça",
+    "Upper e cruzado",
+    "Corpo, corpo, cabeça",
+    "Pêndulo e corpo",
+    "Sequência de 4 em dois níveis",
+    "Livre: muda a altura"
+   ],
+   "calls": [
+    "1-2-3 corpo",
+    "6-3-2",
+    "3 corpo, 3 cabeça, 2",
+    "Pêndulo, 3 corpo",
+    "1-2, 3 corpo, 2",
+    "5-6-3",
+    "1, 2 no corpo, 3",
+    "Esquiva, 3 corpo, 3"
+   ]
+  }
  },
  {
   "name": "Pernas e ângulos",
@@ -400,7 +520,47 @@
    "saltitar",
    "passoduplo",
    "pivoreverso"
-  ]
+  ],
+  "basico2": {
+   "rounds": [
+    "Passo e jab",
+    "Entra, 1-2, sai",
+    "Passo lateral e 1-2-3",
+    "Saltita e combina",
+    "Passo atrás e contra",
+    "Livre: pés e mãos juntos"
+   ],
+   "calls": [
+    "Passo à frente, 1-2",
+    "Passo lateral, 1-2-3",
+    "Entra, 1-2-3, sai",
+    "Passo atrás, 2-3",
+    "Saltita, 1-2",
+    "Passo lateral, 3-2",
+    "Passo à frente, 1-1-2",
+    "Saltita, passo lateral, 1"
+   ]
+  },
+  "basico3": {
+   "rounds": [
+    "Entra e sai com sequência",
+    "Passo lateral e pêndulo",
+    "Passo atrás e 1-2-3",
+    "Saltita, esquiva, contra",
+    "Passo duplo de base",
+    "Livre: nunca parado"
+   ],
+   "calls": [
+    "Entra, 1-2-3-2, sai",
+    "Passo lateral, pêndulo, 2",
+    "Passo atrás, 1-2-3",
+    "Saltita, esquiva, 2",
+    "Passo à frente, 1-2-5",
+    "Passo lateral, 1-1-2",
+    "Circula pra esquerda",
+    "Circula pra direita"
+   ]
+  }
  },
  {
   "name": "Potência",
@@ -499,7 +659,47 @@
    "up6",
    "overhand",
    "blitz"
-  ]
+  ],
+  "basico2": {
+   "rounds": [
+    "1-2-3 com rotação",
+    "Cruzado de direita",
+    "Uppers dos dois lados",
+    "1-2 com hook no final",
+    "2-3-2 firme",
+    "Livre: força com técnica"
+   ],
+   "calls": [
+    "1-2-3",
+    "1-2-4",
+    "5-6",
+    "1-2-3-2",
+    "3-2-3",
+    "2-3-2",
+    "1-6-3",
+    "1-2, 5-2"
+   ]
+  },
+  "basico3": {
+   "rounds": [
+    "1-2-3-2 forte",
+    "Upper, cruzado, direto",
+    "Cruzados dos dois lados",
+    "1-2-3-4",
+    "Pêndulo e potência",
+    "Livre: termina forte"
+   ],
+   "calls": [
+    "1-2-3-2",
+    "6-3-2",
+    "3-4-3",
+    "1-2-3-4",
+    "Pêndulo, 3-2",
+    "5-2-3",
+    "1-2-5-2",
+    "2-3-2, esquiva, 2"
+   ]
+  }
  },
  {
   "name": "Condicionamento de luta",
@@ -595,6 +795,46 @@
    "agachsalto",
    "sprawl",
    "joelhoalto"
-  ]
+  ],
+  "basico2": {
+   "rounds": [
+    "1-2 sem parar",
+    "1-2-3 e agachamento",
+    "Uppers rápidos",
+    "Rajada e cobertura",
+    "Saltita e 1-2-3",
+    "Livre: até o sino"
+   ],
+   "calls": [
+    "1-2 sem parar",
+    "Agacha e 1-2-3",
+    "5-6 rápido",
+    "Socos rápidos e cobertura",
+    "Saltita, 1-2-3",
+    "Rajada!",
+    "1-2-3-2 rápido",
+    "Joelho alto, 1-2"
+   ]
+  },
+  "basico3": {
+   "rounds": [
+    "Sequências sem parar",
+    "Agacha e 1-2-3-2",
+    "Corpo rápido",
+    "Esquiva e rajada",
+    "Pêndulo e socos",
+    "Livre: até o sino"
+   ],
+   "calls": [
+    "1-2-3-2 rápido",
+    "Agacha e 1-2-3-2",
+    "Corpo! 3-4-3-4",
+    "Esquiva e rajada",
+    "Pêndulo, socos rápidos",
+    "Rajada!",
+    "5-6-5-6",
+    "Burpee e 1-2"
+   ]
+  }
  }
 ]
